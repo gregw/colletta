@@ -1,0 +1,13 @@
+The condominium of Colletta provides a [[http://www.colletta.it/village/staff/:procaccia]] service for the owners.
+
+The procaccia provides assistance to the owners and their guests with the operation of the village and acts as a custodian of the properties in the absence of the owners.
+
+The procaccia operates from the condominium office on the steps leading down into the village and is available 7 days per week from 8:30 to 12:30 and 14:30 to 17:30 (or at any time for emergencies):$$
+
+Office Tel:      ${phone}$$
+Cell: (+39) 333 99 39 638 $$
+Email:   {{{<a href="mailto:giulia@colletta.it?Subject=Enquiry">giulia@colletta.it</a>}}}$$
+
+$$
+
+For all matters concerning [[http://www.colletta.it/renting/:rentals]] and other services (such as cleaning), please contact the Borgo Telematico team at info@colletta.it or on (+39) 340 12 455 87.

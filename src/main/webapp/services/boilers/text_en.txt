@@ -1,0 +1,5 @@
+The apartments have boilers of the type that have a reservoir of water that is maintained at the temperature selected on a wheel on the front. If you draw all the stored water then you will have to wait a while for it to reheat.
+
+On the front there is also a red horizontal on/off switch that is lit up when the boiler is switched on and current is being drawn. 
+
+There will also be a switch on the fuse box specifically marked 'Boiler', but this and others for the room will probably be master-controlled by another marked 'Generale'.

@@ -1,0 +1,66 @@
+Some apartments have a [UNICO Olimpia Splendid] air conditioning unit. All models can cool the air in the apartment, but some can also provide heating.
+
+There is a grey battery-operated remote control for these units. If you don't have access to one, the unit can still be turned on by using a thin shaft to press the micro-switch to the right of the indicators on the top left hand side of the front of the device. This turns the device on in automatic mode - the baffles swing, and the room is cooled to 18 degrees. Sometimes there is a pause of several minutes before this gets going.
+
+When the unit is on, all doors and windows must remain closed.
+
+Do not try to adjust the vertical direction of the airflow baffles by hand – you have to use the remote control. The horizontal direction, however, is selected manually – but you should do this only when the grating is not moving.
+
+[Malfunctions and maintenance]
+
+If the unit does not respond to your attempts to turn it on, then the electricity is probably turned off on the apartment's fuse box (the switch that reads 'fancoil') or in the service room for your block (see the procaccia!).
+
+If the green and yellow indicators flash, there is a malfunction in the condensation water drainage system. The excess water may be released by removing the plug from the rubber tube beneath the unit.
+
+The 'room air filter' must be cleaned periodically, and if the unit cuts out and the red indicator lights up this is most likely to be the problem.
+
+The 'external air battery' also needs to be kept clean. To do this, the casing must be taken off, and the noise insulation removed from the inside. Clean with a vacuum cleaner or soft brush, taking care not to damage the aluminium heat exchanger baffles. It may be necessary to use water and detergents to remove heavily encrusted dirt. When replacing the noise insulation the edges and gaskets must be matched with their reference markings.
+
+[Buttons on the Remote Control] $$
+(The air conditioning device emits a beep when it receives a command.) $$
+
+Three round buttons above sliding cover: $$
+
+T1	On/Off (the device remembers and restores the current settings) $$
+T2	Automatic operation (optimal achievement of set temperature) $$
+T3	Night operation $$
+
+Four long buttons under cover: $$
+
+T4	Operating mode selector (cooling / heating / dehumidification only / fan only) $$
+T5	Fan speed selector (press repeatedly when T4 has selected fan only) $$
+T6	Program and time setting (press repeatedly) $$
+T7	Increase/decrease temperature/time settings $$
+
+Four buttons below: $$
+
+T8	Start external air intake (if unit so equipped) $$
+T9	Movable baffle vertical adjustment (on/off) $$
+T10	Reset – revert to factory default settings $$
+T11	Program start (prog 1 only, prog 2 only, both, neither) $$
+
+[Display on the Remote Control] $$
+
+Six icons: $$
+
+D1	Fan speed or auto mode (0 – 3 blades are filled to indicate speed, or AUTO is displayed) $$
+
+D2	Heating $$
+D3	Cooling $$
+D4	Dehumidifier only (ignoring temperature and fan speed settings) $$
+
+D5	External air intake $$
+D6	Night operation $$
+
+Panel below icons D2, D3 and D4 $$
+
+D7	Automatic operation $$
+
+Two panels below: $$
+
+D8	Operating programme 1 $$
+D9	Operating programme 2 $$
+
+D10	Temperature (thermometer) or time indicator (Hr Mins) $$
+
+The batteries for the remote are 2 x dry cell LR03 1.5V

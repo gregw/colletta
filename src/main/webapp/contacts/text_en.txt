@@ -1,0 +1,47 @@
+!Mail Address
+Colletta di Castelbianco
+$$17030 Castelbianco SV
+$$Italy
+
+!EMail Address
+info@colletta.it - General Information$$
+affitti@colletta.it - Renting$$
+giulia@colletta.it - Custodian$$
+wiltel@wiltel.org - WWW site$$
+
+!Phone Numbers
+[Bar/Cafe]: ${phone_bar} $$
+[Rental Manager]: ${phone_officebis} $$
+    cell: ${phone_mobile}$$
+    fax: ${fax}$$
+
+Instructions for the [[/village/services/phone:Colletta Phone System]].$$
+
+!Emergency
+Please speak slowly.$$
+[Police in Cisano]: ${phone_carab}  (Carabinieri in Cisano)$$
+[Police]: ${phone_polizia} (Polizia di Stato in Albenga) $$
+[Medical]: ${phone_soccorso} (Emergency ward in Albenga)$$
+[Fire]: ${phone_fuoco} $$
+
+!Medical
+[Specialist Hospital]: ${phone_sampGE} (Sampierdarena GE)$$
+[Specialist Hospital]: ${phone_sanmartino} (San Martino GE)$$
+[Ambulance]: ${phone_croce} (Croce Bianca, Albenga)$$
+[Medical helpline]: ${phone_medica} $$
+[Doctor]: ${phone_sanitario} (Castelbianco)$$
+[Doctor]: ${phone_trucco} (Dottore Trucco, Castelbianco)$$
+[National Health]: ${phone_civile} $$
+[Chemist]:${phone_chemist}(Castelbianco)$$
+[Osteopath] Bruno Perlo, Via Papa Giovanni 162, Albenga Tel 0182-53203 / 335-5370628 $$
+[Dentist] Rodolfo Guglierame, Piazza Matteotti 3/2, Albenga Tel 0182 50656 $$
+
+!Services
+[Water]: ${phone_acqua} $$
+[Electricity]: ${phone_elettrica} $$
+[Network]: Bruzzone Alessandro lcamedia@lcamedia.it ph 019.6766050, cell 329.4505472 $$
+[Taxi] Giuseppe 349-1623981 (saloon car) $$
+[Taxi] Vincenzo 328-8258181 / 347-4268978 (9 seater) $$
+
+
+$$

@@ -1,0 +1,14 @@
+If the on-line payment system is not suitable, you may pay by bank transfer using the details below.
+Please use the booking reference as the reference for the transfer and email a copy of your receipt once the payment is made.  Allow several days for confirmation.
+
+Bank:    Cassa di Risparmio Savona $$
+Branch:  Cisano sul Neva$$
+Account: Borgo Telematico S.r.l$$
+
+ABI: 6310   $$
+CAB: 49390     $$
+CCN: 4036580 $$
+IBAN : IT68L0631049390000004036580$$
+SWIFT: CRSVIT2S127$$
+
+email: affitti@colletta.it

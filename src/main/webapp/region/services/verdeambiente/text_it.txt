@@ -1,0 +1,9 @@
+[da Roberto Scola]
+
+* Pulizia aree verdi
+* Manutenzione giardini
+* Potature
+* Impianti irrigazione
+
+Tel. ${phone}
+$$Cell. ${cell}

@@ -1,0 +1,11 @@
+Il ristorante Gin, pur trovandosi a pochi chilometri dalle località della costa, Vi propone la tradizione e l'atmosphera dell'entroterra ligure. L'atmosfera riservata del ristorante vuole corrispondere alle attese di chi cerca, anche nella cucina, l'incontro con la nostra tradizione, offrendo, accanto a piatti ispirati alle più recenti linee dell'attuale gastronomia, i sapori caratteristici della nostra terra, nell'attento rispetto delle produzioni stagionali. Una ricca scelta di vini selezionati, che salvaguardiamo in una tipica cantina ligure, completa la accoglienza.
+
+Chiusura invernale il lunedi.
+
+
+[[http://www.dagin.it/:www.dagin.it]]$$
+Via Pennavaire 48$$
+17030 Castelbianco
+
+Tel. ${phone}
+$$Fax. ${fax}

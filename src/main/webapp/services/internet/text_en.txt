@@ -1,0 +1,22 @@
+Every apartment in Colletta has a high speed internet connection accessed via the village Local Area Network.  Connect your computer to the network via its Ethernet (LAN) interface - all modern computers have one built-in. No modem of any kind is required, but you do need a cable (see below).
+
+!Connection
+A standard 10-base-T or 100-base-T twisted pair ethernet cable is required to connect your computer to the wall socket.
+
+!Configuration
+The network in Colletta is configured automatically with DHCP.
+
+!Wireless Wi-Fi
+There is an open wi-fi hub in the Telecaffe and around the eoffice. $$
+
+Some apartments have wifi hubs installed. If you wish to connect your own wi-fi hub in your apartment, please note that it should be a simple wi-fi access point device. An ADSL router will not work. Please let the [[/village/staff/:procaccia]] know if you intend to connect any such device, and you may refer to them for further details or advice.
+
+Please do not connect a computer to the network simultaneously via a cable connection and a wi-fi connection, because this can cause an enormous amount of redundant traffic. $$
+
+!Firewall
+Colletta has its own firewall to protect against certain types of threat originating from the Internet. However, this is no substitute for taking all the normal precautions when connecting to a public network.
+
+!Assistance 
+In the first instance refer to the [[/village/staff/:procaccia]]. If necessary She will refer to the technical support service (whose representative is Bruzzone Alessandro  lcamedia@lcamedia.it Tel 019.6766050 Cell 329.4505472).
+$$
+$$

@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<h1>Collatta Web Site Instructions</h1>
+These instructions are for the colletta web site <a
+href="http://www.colletta.it/">http://www.colletta.it</a>.
+<br/>
+<h2>Users</h2>
+The site allows users&nbsp; to login to get more permissions and to see
+more information. Currently there is no online mechanism for creating
+new<br>
+user accounts or passwords, they can only be updated by request to <a
+ href="mailto:mortbay@mortbay.com">Mort Bay Consulting</a>. Each user
+has<br>
+<ul>
+  <li>login name</li>
+  <li>full name</li>
+  <li>email address</li>
+  <li>preferred language</li>
+  <li>Zero or more roles<br>
+  </li>
+</ul>
+The
+following user roles are defined:<br>
+<br>
+<table>
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">EDITOR<br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;">Once logged in, and EDITOR may
+select the edit mode and update the content of the pages.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">OWNER<br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;">An owner of an apartment.&nbsp;
+An owner may view bookings for their apartments and can approve or
+confirm those bookings. Owners may also set the manager&nbsp; for
+bookings allocated to their apartments.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">MANAGER<br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;">A manager may view full details
+of online bookings and can approve or confirm bookings for the
+apartments they are listed as managing.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h2><b>Edit Instructions</b></h2>
+Most pages on the website can be updated by a user with the EDITOR
+role.&nbsp; Each web pages is a composite of text, properties and
+images. The text and<br>
+properties can be set for a particular language or for all languages.
+Once logged in, an EDITOR may enter edit mode by selecting the edit
+button in the bottom right corner all pages.&nbsp; They can then use
+the site normally and the edit forms will appear at the bottom of every
+page.<br>
+&nbsp;<br>
+<small>
+</small>
+<h3><b>Edit Page Text:</b></h3>
+<small>
+<p>Most pages have some text displayed on them. This text can be
+entered in each of the supported languages in the EDIT PAGE TEXT boxes
+above. If text for a particular language is not available, then the
+English or Italian text will be displayed instead.
+The text entered may be formatted as follows:
+</p>
+<table>
+  <tbody>
+    <tr>
+      <td><small><code>!Heading</code></small></td>
+      <td>-</td>
+      <td><small>The text "Heading" formated as a section
+heading.</small></td>
+    </tr>
+    <tr>
+      <td><small><i>blank line</i></small></td>
+      <td>-</td>
+      <td><small>New paragraph</small></td>
+    </tr>
+    <tr>
+      <td><small><code>$$</code></small></td>
+      <td>-</td>
+      <td><small>Line break</small></td>
+    </tr>
+    <tr>
+      <td><small><code>* my text</code></small></td>
+      <td>-</td>
+      <td><small>The text formated as a bullet list</small></td>
+    </tr>
+    <tr>
+      <td><small><code># my text</code></small></td>
+      <td>-</td>
+      <td><small>The text formated as a numbered list</small></td>
+    </tr>
+    <tr>
+      <td><small><code>${name}</code></small></td>
+      <td>-</td>
+      <td><small>Replaced with the property called "name". See
+properties
+below.</small></td>
+    </tr>
+    <tr>
+      <td><small><code>{{{ html }}}</code></small></td>
+      <td>-</td>
+      <td><small>html markup</small></td>
+    </tr>
+    <tr>
+      <td><small><code>[text]</code></small></td>
+      <td>-</td>
+      <td><small>Bold text</small></td>
+    </tr>
+    <tr>
+      <td><small><code>[style:text]</code></small></td>
+      <td>-</td>
+      <td><small>Styled text. Known styles include: Bold, SubTitle,
+Label, Title<br>
+      </small></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><small>[[path:text]]</small><br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;"><small>Link to this web site.</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>[[http://host/link:text]]<br>
+      </code></small></td>
+      <td>-</td>
+      <td><small>Link to another web site with text.<br>
+      </small></td>
+    </tr>
+    <tr>
+      <td><small><code>[[http://host/link:class:alt:image.jpg]]<br>
+      </code></small></td>
+      <td>-</td>
+      <td><small>Image link to another web site with text.<br>
+      </small></td>
+    </tr>
+    <tr>
+      <td><small><code>style:file.jpg</code></small></td>
+      <td>-</td>
+      <td><small>Styled image from current directory. Known styles
+include: Content,&nbsp; BigThumb, AptSmall,&nbsp; AptTiny,&nbsp; Staff,
+      <br>
+      </small></td>
+    </tr>
+    <tr>
+      <td><small><code>class:file.jpg</code></small></td>
+      <td>-</td>
+      <td><small>Inline image from current directory</small></td>
+    </tr>
+    <tr>
+      <td><small><code>class:alt:file.jpg</code></small></td>
+      <td>-</td>
+      <td><small>Inline image from current directory</small></td>
+    </tr>
+  </tbody>
+</table>
+</small><small>
+</small>
+<h3><b>Edit Page Properties:</b></h3>
+<small>
+<p>Every page has a number of associated properties that are used to
+generate the page menus, indexes, titles and to expand the text
+properties entered above. Properties can be given a value that is
+common for all languages, or
+they may be given a value for each language. If there is no value for a
+language and no common value, then the
+english or italian value is used. Every page may have the following
+parameters:
+</p>
+<table>
+  <tbody>
+    <tr>
+      <td><small><code>name</code></small></td>
+      <td>-</td>
+      <td><small>The name of the page as it appears in the left side
+menu. </small></td>
+    </tr>
+    <tr>
+      <td><small><code>order</code></small></td>
+      <td>-</td>
+      <td><small>A value used to sort the order left menu.</small></td>
+    </tr>
+    <tr>
+      <td><small><code>title</code></small></td>
+      <td>-</td>
+      <td><small>The page title displayed at the top of the page.</small></td>
+    </tr>
+    <tr>
+      <td><small><code>blurb</code></small></td>
+      <td>-</td>
+      <td><small>A description of the page, normally used in the page
+above.</small></td>
+    </tr>
+    <tr>
+      <td><small><code>redirect</code></small></td>
+      <td>-</td>
+      <td><small>Display the same content as another page.</small></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+Each page may also have it's own set of special properties, these are
+often described in the "Page Instructions" at the bottom of the edit
+page.
+A page inherits all the properties from the page above in the website
+(eg. <code>Home&gt;Renting&gt;Apartments</code> inherits the
+properties from <code>Home&gt;Renting</code>, which inherits
+properties
+from <code>Home</code>), so if you cannot find a property, look for it
+in the parent page.
+</p>
+</small><small>
+</small>
+<h3><b>Edit Page Photos:</b></h3>
+Photos may be uploaded and deleted. Photos should be uploaded as jpg or
+gif files in the maximum size to be displayed. The names of the images
+should be such that they will sort alphabetically in the order they
+should be displayed down the page.<br>
+<small>
+<br>
+</small>
+<h2>Bookings</h2>
+<small>
+<p>Bookings for apartments may be taken from any user of the web site
+or entered by MANAGERs and OWNERs.&nbsp; <br>
+</p>
+</small>
+<h3>Booking States</h3>
+<table>
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Requested </td>
+      <td style="vertical-align: top;">-</td>
+      <td>A booking is considered Requested if it is not
+Saturday to Saturday
+or no specific apartment has been identified.&nbsp;&nbsp; Requested
+bookings do
+not hold an apartment.
+A manager must manually approve a requested booking.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Approved<br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;">A booking entered on the web
+will be automatically
+approved if it&nbsp; is
+from saturday to saturday and for an available apartment.&nbsp;
+When&nbsp;
+approved, the apartment will be held for 48hours until the
+booking&nbsp;&nbsp; is
+confirmed.&nbsp;&nbsp;&nbsp; It can be confirmed manually by a manager
+OR by
+payment of a deposit.
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Confirmed<br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;">Either a deposit has been paid
+or a Manager has manually confirmed the reservation. The booking will
+be held. Payment reminders will be sent 2 weeks before arrival<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Expired<br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;">A deposit was not received
+within 48 hours of the approval.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Cancelled<br>
+      </td>
+      <td style="vertical-align: top;">-<br>
+      </td>
+      <td style="vertical-align: top;">A booking has been cancelled.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>Payment</h3>
+Payments may be made online via PayPal or entered manually by a
+Managers or Owners.&nbsp;&nbsp; Managers and owners may also enter
+discounts for a booking.<br>
+PayPal allows for credit card transactions or for other forms of
+on-line transfers.&nbsp; When money is received, the web site is
+automatically updated. Money can be<br>
+refunded upto 30 days after payment via paypay and will automatically
+be deducted for the booking.<br>
+<br>
+<br>
+<p><br>
+</p>
+</body>
+</html>

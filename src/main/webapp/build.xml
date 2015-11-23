@@ -1,0 +1,168 @@
+
+<project name="Colletta" default="classes" basedir=".">
+ 
+  <!-- =================================================================== -->
+  <!-- Import properties                                                   -->
+  <!-- =================================================================== -->
+  <property file="ant.properties" />
+
+
+
+   <!-- =================================================================== -->
+   <!-- Set up classpaths                                                   -->
+   <!-- =================================================================== -->
+  <target name="classpath">
+
+    <path id="classpath">
+      <fileset dir="${webinf.lib}">
+        <include name="*.jar"/>
+      </fileset>
+      <fileset dir="${lib}">
+        <include name="*.jar"/>
+       </fileset>
+       <fileset dir="${jetty}/lib">
+        <include name="*.jar"/>
+       </fileset>
+       <fileset dir="${jetty}/lib/jsp-2.0">
+        <include name="*.jar"/>
+       </fileset>
+       <pathelement location="${classes}"/>
+       <pathelement location="${tools.jar}"/>
+    </path>
+
+    <property name="expanded.classpath" refid="classpath"/>
+    <echo message="classpath=${expanded.classpath}" level="info"/>
+ </target>
+
+   <!-- =================================================================== -->
+   <!-- Compiles the src code                                               -->
+   <!-- =================================================================== -->
+  <target name="classes" depends="classpath" description="Compile classes">
+    <mkdir dir="${classes}"/>     
+    <javac srcdir="${src}"
+           destdir="${classes}"
+           debug="${javac.debug}"
+           optimize="${javac.optimize}"
+           deprecation="${javac.deprecation}"
+           target="1.4"
+           source="1.4"
+           >
+       <classpath>
+         <path refid="classpath"/>
+       </classpath>
+
+       <include name="**/*.java"/>
+    </javac>
+    <copy todir="${webinf.classes}">
+       <fileset  dir="${classes}">
+         <include name="**/*.class"/>
+       </fileset>
+    </copy>
+  </target>
+
+
+
+   <!-- =================================================================== -->
+   <!-- Compiles the test code                                              -->
+   <!-- =================================================================== -->
+  <target name="test.classes" depends="classpath, classes" description="Compile test classes">
+    <javac srcdir="${test}"
+           destdir="${classes}"
+           debug="${javac.debug}"
+           optimize="${javac.optimize}"
+           deprecation="${javac.deprecation}"
+           target="1.2"
+           >
+       <classpath>
+         <path refid="classpath"/>
+       </classpath>
+       <include name="**/*.java"/>
+    </javac>
+  </target>
+
+
+   <!-- =================================================================== -->
+   <!-- Create war file                                                     -->
+   <!-- =================================================================== -->
+  <target name="war" depends="classes" description="build WAR"> 
+    <war destfile="${war}"
+         webxml="${webinf.web.xml}"
+         basedir="${basedir}">
+      <exclude name="build.xml"/>
+      <exclude name="WEB-INF/web.xml"/>
+      <exclude name="**/CVS/**"/>
+      <exclude name="src/**"/>
+      <exclude name="lib/**"/>
+      <exclude name="output/**"/>
+    </war>
+       
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Deploy the war to Jetty                                             -->
+  <!-- =================================================================== -->
+  <target name="deploy.jetty" depends="war" description="deploy WAR to jetty"> 
+    <copy file="${war}" todir="${jetty.webapps}"/>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Deploy the war to Tomcat                                            -->
+  <!-- =================================================================== -->
+  <target name="deploy.tomcat" depends="war" description="deploy WAR to tomcat"> 
+    <copy file="${war}" todir="${tomcat.webapps}"/>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Delete generated files                                              -->
+  <!-- =================================================================== -->
+  <target name="clean" description="Remove generated files"> 
+    <delete file="${war}" quiet="false"/>
+    <delete file="${jetty.webapps}/${webapp.name}.war" quiet="false"/>
+    <delete dir="${webinf.classes}/org" quiet="false"/>
+    <delete quiet="false">
+      <fileset dir="${webinf.classes}">
+        <include name="**/*.class"/>
+      </fileset>
+    </delete>
+    <delete dir="${classes}" quiet="false"/>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Precompile the JSPs                                                 -->
+  <!-- =================================================================== -->
+  <target name="jspc" depends="classpath, classes" description="Precompile JSP"> 
+    <java classname="org.apache.jasper.JspC"
+          dir="${basedir}"
+          fork="yes">
+      <classpath>
+        <path refid="classpath"/>
+      </classpath>
+      <arg line="-webapp . -v -d WEB-INF/classes/ -webinc WEB-INF/web.inc" />
+    </java>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Run unit tests                                                      -->
+  <!-- =================================================================== -->
+  <target name="unit.test" depends="classes, jspc, test.classes" description="Run junit tests">
+    <mkdir dir="${test.results}"/>
+    <delete file="${test.results}/*"/>
+    <junit fork="no" printsummary="yes" haltonerror="yes" haltonfailure="yes">
+      <formatter type="plain" usefile="true"/>
+      <classpath>
+        <path refid="classpath"/>
+      </classpath>
+      <batchtest fork="no" todir="${test.results}">
+        <fileset dir="${test}">
+	  <include name="**/*Test*.java" />
+	</fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+
+</project>

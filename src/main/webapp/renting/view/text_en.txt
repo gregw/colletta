@@ -1,0 +1,5 @@
+The capacity is given by bed type, so an apartment with 6 place written as 2+1+1(+2) would
+have a double bed, two singles and a double sofa bed (or other temporary bed). Prices are fully inclusive - no hidden extras.
+$$
+$$
+Left:09plan.jpg

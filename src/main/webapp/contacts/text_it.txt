@@ -1,0 +1,43 @@
+Colletta di Castelbianco$$
+17030 Castelbianco SV$$
+Italia
+
+!Indirizzi Email
+info@colletta.it - Informazioni$$
+affitti@colletta.it - Affittare$$
+giulia@colletta.it - Procaccia$$
+wiltel@wiltel.org – sito internet$$
+
+!Contatti telefonici
+[Bar/Caffé]: ${phone_bar} $$
+[Responsabile delle locazioni]: ${phone_officebis} $$
+    cell: ${phone_mobile}$$
+    fax: ${fax}$$
+
+Istruzioni per il [[/village/services/phone:sistema telefonico di Colletta]].$$
+
+!Pronto Intervento
+Parlare lentamente senza concitazione.$$
+[Carabinieri]: ${phone_carab} (a Cisano)$$
+[Polizia di Stato]: ${phone_polizia} (ad Albenga) $$
+[Pronto soccorso]: ${phone_soccorso} (ad Albenga)$$
+[Vigili del fuoco]: ${phone_fuoco} $$
+
+!Enti di Soccorso
+[Centro ustioni]: ${phone_sampGE} (Sampierdarena GE)$$
+[Centro ustioni]: ${phone_sanmartino} (San Martino GE)$$
+[Croce Bianca]: ${phone_croce} (Albenga)$$
+[Guardia medica]: ${phone_medica} $$
+[Soccorso sanitario]: ${phone_sanitario} (Castelbianco)$$
+[Dottore]: ${phone_trucco} (Dott. Trucco, Castelbianco)$$
+[Protezione civile]: ${phone_civile} $$
+[Farmacia]: ${phone_chemist}(Castelbianco)$$
+[Osteopata] Bruno Perlo, Via Papa Giovanni 162, Albenga Tel 0182-53203 / 335-5370628 $$
+[Dentista] Rodolfo Guglierame, Piazza Matteotti 3/2, Albenga Tel 0182 50656 $$
+
+!Guasti agli impianti
+[Azienda dell'acqua]: ${phone_acqua} $$
+[Azienda dell'energia elettrica]: ${phone_elettrica} $$
+[Rete]: Bruzzone Alessandro lcamedia@lcamedia.it  019.6766050, cell 329.4505472 $$
+
+$$

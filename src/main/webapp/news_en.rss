@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Colletta di Castelbianco News</title>
+    <link>http://www.colletta.it/en</link>
+    <description>Colletta di Castelbianco News</description>
+    <item>
+      <title>Olive Festival 2012</title>
+      <link>http://www.colletta.it/en/news/olivefestival2012/</link>
+      <description>Photos</description>
+      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
+      <guid>http://www.colletta.it/en/news/olivefestival2012/</guid>
+      <dc:date>2015-11-23T00:23:00Z</dc:date>
+    </item>
+    <item>
+      <title>Olive Festival 2011</title>
+      <link>http://www.colletta.it/en/news/olivefestival2011/</link>
+      <description>Annual Olive Harvest</description>
+      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
+      <guid>http://www.colletta.it/en/news/olivefestival2011/</guid>
+      <dc:date>2015-11-23T00:23:00Z</dc:date>
+    </item>
+    <item>
+      <title>Olive Festival 2010</title>
+      <link>http://www.colletta.it/en/news/olivefestival2010/</link>
+      <description>Annual olive harvest</description>
+      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
+      <guid>http://www.colletta.it/en/news/olivefestival2010/</guid>
+      <dc:date>2015-11-23T00:23:00Z</dc:date>
+    </item>
+    <item>
+      <title>Olive Festival 2008</title>
+      <link>http://www.colletta.it/en/news/olivefestival2008/</link>
+      <description>Annual harvest</description>
+      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
+      <guid>http://www.colletta.it/en/news/olivefestival2008/</guid>
+      <dc:date>2015-11-23T00:23:00Z</dc:date>
+    </item>
+  </channel>
+</rss>
+

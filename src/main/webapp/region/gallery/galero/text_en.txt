@@ -1,0 +1,5 @@
+pano:pano.thumb.jpg
+
+A panoramic image from the top of Mt Galero showing the whole region around Colletta.
+
+Download the [[pano.mid.jpg:medium]] (880k) or [[pano.jpg:full size]] (1.4M) version.

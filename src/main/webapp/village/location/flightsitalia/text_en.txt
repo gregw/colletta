@@ -1,0 +1,159 @@
+Click here for a listing of [[flightsuk: flights from the UK]].
+
+!Direct flights to [[http://www.rivierairport.it/:Villanova d'Albenga Airport]]:
+Rome Fiumicino [[http://www.rivierairport.it/orari_airone.htm:AirOne]]
+$$Olbia Costa Smeralda [[http://www.rivierairport.it/orari_airvallee.htm:AirVallee]]
+
+!Flights to [[http://www.airport.genova.it/italia/index.php:Genoa Airport]] :
+Alghero	
+$$Amsterdam
+$$Brussels 	  	  	 
+$$Catania		
+$$London Stansted
+$$Milan Malpensa
+$$Monaco
+$$Naples
+$$Olbia		
+$$Palermo  	  	  	 
+$$Paris CDG 			
+$$Rome Fiumicino  	 
+$$Tirana
+
+!Flights to [[http://www.nice.aeroport.fr/include/default.asp:Nice Airport]] :
+France:
+$$Ajaccio
+$$Bastia
+$$Biarritz
+$$Bordeaux
+$$Brest
+$$Caen
+$$Calvi
+$$Cannes - Palm Beach
+$$Clermont-Ferrand
+$$Figari
+$$Lille
+$$Limoges
+$$Lyon
+$$Metz-Nancy
+$$Monte-Carlo
+$$Mulhouse
+$$Nantes
+$$Paris-Orly
+$$Paris-Roissy
+$$Reims
+$$Rennes
+$$Strasbourg
+$$Toulouse
+$$
+$$Denmark:
+$$Billund
+$$Copenhagen
+$$
+$$Ireland:
+$$Cork
+$$Dublin
+$$
+$$Norway:
+$$Bergen
+$$Oslo
+$$Oslo Sanderfjord
+$$Stavanger
+$$
+$$UK:
+$$Belfast
+$$Birmingham
+$$Bristol
+$$Leeds Bradford
+$$East Midland Nottingham
+$$Edinbrough
+$$Glasgow
+$$Liverpool
+$$London Gatwick
+$$London Heathrow
+$$London Luton
+$$London Stansted
+$$Manchester
+$$Manston
+$$Newcastle
+$$
+$$Sweden:
+$$Göteborg
+$$Stockholm
+$$
+$$Germany:
+$$Berlin Schoenefeld
+$$Berlin Tegel
+$$Cologne
+$$Dusseldorf
+$$Dortmund
+$$Frankfurt
+$$Freidrichshafen
+$$Hamburg
+$$Munich
+$$Stuttgart
+$$
+$$Austria:
+$$Graz
+$$Innsbruck
+$$Vienna
+$$
+$$Belgium:
+$$Brussels
+$$
+$$Luxemburg:
+$$Luxemburg
+$$
+$$Holland:
+$$Amsterdam
+$$
+$$
+$$Poland:
+$$Warsaw
+$$
+$$Russia:
+$$Moscow
+$$
+$$Switzerland:
+$$Basel
+$$Geneva
+$$Zurich
+$$
+$$Portugal:
+$$Lisbon
+$$Porto
+$$
+$$Spain:
+$$Barcelona
+$$Madrid
+$$
+$$Italy:
+$$Milan
+$$Naples
+$$Rome
+$$
+$$Algeria:
+$$Algiers
+$$Marocco:
+$$Casablanca
+$$Tunisia:
+$$Djerba
+$$Monastir
+$$Tunis
+$$
+$$Saudia Arabia:
+$$Jeddah
+$$Riyadh
+$$United Arab Emirates:
+$$Dubaï
+$$
+$$Lebanon:
+$$Beruit
+$$
+$$Turkey:
+$$Istanbul
+$$
+$$Canada:
+$$Montréal
+$$
+$$USA:
+$$New-York JFK

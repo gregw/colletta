@@ -1,0 +1,40 @@
+$$
+[[http://www.autofiori.it/:Autostrada dei Fiori A10]] $$
+Click on Traffico for the traffic situation in real time. $$
+
+[[http://www.autostrade.it/:Traffic Predictions]] $$
+Click on the map for the traffic situation in real time, and predictions of traffic levels at particular times on particular days (Previsioni Traffico) - crucial when planning your journey to the airport! You can also download a reference calendar (Il depliant delle previsioni). Unfortunately, this site doesn't cover all the motorways, but it does cover the local hotspot between Savona and Genoa. $$
+$$
+
+[[http://www.informadove.it/traffico/navigatore.asp:Motorway incidents and works]] $$
+Click on the map to get an up to the minute list. $$
+
+[[http://www.quattroruote.it/auto/servizi/infotrafic/avvio.cfm:Motorway queues]] $$
+For the current situation, click on the motorway of interest or on 'Cartine'.  $$
+
+[[http://www.trail.liguria.it/Infrastrutture/AutostradaA10/datiA10.htm:Map of A10]] $$
+Shows entrances, exits, service stations, etc. $$
+
+[[http://www.salt.it/autostrada/tracciato.html:Map of A12 Genova / Livorno]] $$
+Shows entrances, exits, service stations, etc. $$
+
+[[http://www.motorways-exitlists.com/: List of motorways]] $$
+Useful list. There are some links to further information. $$
+
+[[/village/location/driving:Detailed instructions for getting to Colletta by road]] $$
+... from Genoa, Nice, Turin. Also a few observations about driving in Italy.
+
+[[http://www.multimap.com/map/browse.cgi?X=900000.332229338&Y=5455000.61369397&width=700&height=400&client=public&gride=898014.332229338&gridn=5453115.61369397&srec=0&coordsys=mercator&addr1=&addr2=&addr3=&pc=&advanced=&local=&scale=200000&multimap.x=434&multimap.y=299:MultiMap]] / [[http://www.maporama.com/share/:Maporama]] / [[http://www.viamichelin.com/viamichelin/gbr/dyn/controller/mapPerformPage?strAddress=&strLocation=Albenga&strCP=&strCountry=000000612&strStartAddress=&strStartCity=&strStartCP=&strStartCityCountry=000001138&strDestAddress=&strDestCity=&strDestCP=&strDestCityCountry=000001138:Via Michelin]] $$
+Street maps with the best level of detail you are likely to find on the Internet. There are even a couple of named streets in Colletta! $$
+
+[[http://www.bison-fute.equipement.gouv.fr/:Bison Fute]] $$
+Click on 'calendrier du trafic' for a calendar of good/bad traffic days in France. $$
+
+[[http://www.liguriainrete.it/cgi-bin/lir/lir/home.do:Trains]] $$
+Click on 'trasporti' and then 'Treno' if you abandon the idea of driving! $$
+
+[Italian][[http://en.wikipedia.org/wiki/Holidays_in_Italy:holidays]] / [[http://www.timeanddate.com/calendar/?country=13:calendar]] $$
+These will give you some idea of the volume of traffic to expect. Note that if a holiday falls on a weekend, then the previous Friday or following Monday may be taken as a holiday in lieu. Also, if a holiday falls on a working day, many Italians take a break between it and the preceding or following weekend (known as a 'ponte'). $$
+
+[[http://www.poliziadistato.it/pds/stradale/autovelox/lista_autovelox.htm:Speed cameras]] $$
+The [traffic] police publish their fixed camera sites and the daily locations of their mobile ones. However, there are many other types of police out to get you as well! $$

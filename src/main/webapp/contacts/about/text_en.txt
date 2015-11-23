@@ -1,0 +1,6 @@
+This web site is developed and maintained by [[http://www.mortbay.com:Mort Bay Consulting]] as a resource for the community of Colletta di Castelbianco.  The site is supported by the [[/renting:rental]] of apartments within the village in conjunction with  [[http://www.borgotelematico.com:Borgo Telematico Srl]]
+
+The information in these pages has been contributed by residents, owners, visitors and staff members.  Technically this is
+done via an online wiki service that allows registered users to add internationalized content to the site.   More content
+and contributors are always welcome, so please email [[mailto:info@colletta-it.com]] with suggestions or
+to request an account.

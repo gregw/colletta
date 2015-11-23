@@ -1,0 +1,10 @@
+!COOP Supermercato
+Si trova COOP nel centro commerciale "Le Serre", si affaccia sulla grande direttrice verso "il Piemonte" che collega la città di Albenga con il casello dell'autostrada Genova-Ventimiglia.
+
+orario di apertura:
+$$dal lunedì al sabato dalle ore 8.30 alle 21.00
+
+aperto anche la domenica con il seguente orario:
+$$da marzo ad ottobre (ora legale) dalle ore 8.30 alle 13.00 e dalle ore 16.00 alle 21.00
+$$(ora solare) dalle ore 8.30 alle 13.00 e dalle ore 15.00 alle 20.00
+$$nel mese di dicembre orario continuato 8.30 - 21

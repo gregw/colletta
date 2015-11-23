@@ -1,0 +1,9 @@
+[da  Roberto Scola]
+
+* Weeding
+* Maintenance
+* Pruning
+* Irrigation equipment
+
+Tel. ${phone}
+$$Mobile ${cell}

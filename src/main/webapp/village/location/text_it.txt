@@ -1,0 +1,19 @@
+Vedete 
+[[http://maps.google.com/maps?f=q&hl=en&q=colletta,+castelbianco,+17030,+SV,+Italia&sll=45.213004,7.382813&sspn=18.451087,31.948242&ie=UTF8&z=5&ll=45.39845,8.217773&spn=18.391857,31.948242&om=1&iwloc=addr:google]] o [[http://www.multimap.com/map/browse.cgi?X=900000.332229338&Y=5455000.61369397&width=700&height=400&client=public&gride=898014.332229338&gridn=5453115.61369397&srec=0&coordsys=mercator&addr1=&addr2=&addr3=&pc=&advanced=&local=&scale=200000&multimap.x=434&multimap.y=299:MultiMap]].
+
+
+!In auto:
+Uscite  l'autostrada GE-VENTIMIGLIA A10 ad Albenga. Seguite la direzione verso Garessio e passare Cisano sul Neva.  A Martinetto girate a sinistra sul ponte (distributore di benzina) nella direzione Castelbianco - Nasino.  Percorrete circa 7 km. fino al ristorante Scola, svoltate a destra e raggiungete dopo 300 mt. la chiesetta di S. Lucia. Il parcheggio e a destra. Benvenuti a Colletta!
+
+Vedete [[driving:Tooc's Driving Instructions]]  per informazione più dettagliata (inglese). Ci sono anche tanti siti che si trattano [[traffic:il traffico]] .
+
+!In treno:
+Stazione di Albenga - si raggiunge Colletta con taxi o [[/region/services/transport:bus]].
+
+!In aereo:
+Dal [[http://www.airport.genova.it/italia/index.php:Aeroporto di Genova]] potete raggiungere Colletta in macchina noleggiata o in taxi. Dal [[http://www.nice.aeroport.fr/include/default.asp:Aeroporta di Nizza]] potete arrivare a Colletta in taxi o macchina noleggiata. Dal [[http://www.rivierairport.it/:Aeroporto di Villanova d'Albenga]] potete raggiungere Colletta in taxi o macchina noleggiata.
+
+Se siete in difficoltà ci telefonate al ${phone}, fax ${fax}.
+
+$$
+Inline:map3.jpg

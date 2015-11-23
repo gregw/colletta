@@ -1,0 +1,10 @@
+Via Nuova 87
+$$17035 Cisano Sul Neva
+
+Tel. ${phone}
+
+! Reviewer's Comments
+[tooc]:
+$$From Colletta going south, the restaurant is just before the fork into Cisano Sul Neva. There is both a restaurant and a pizzeria here. The ristorante is in a small room bordering the main road. No English is spoken and there is no menu, but the food is good. The pizzeria is in a larger room at the back, but in the summer you can eat at tables outside in the very atmospheric rustic courtyard. The pizzas are very good.
+$$ Restaurant: Dining Style: [[../reviews:4]]
+$$ Pizzeria:   Dining Style: [[../reviews:3]]

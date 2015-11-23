@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app 
+   xmlns="http://java.sun.com/xml/ns/j2ee" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" 
+   version="2.4"> 
+
+  <display-name>Colletta</display-name>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+    <filter-name>UFilter</filter-name>
+    <filter-class>com.mortbay.iwiki.UserFilter</filter-class>
+  </filter>
+  
+  <filter>
+    <filter-name>LFilter</filter-name>
+    <filter-class>com.mortbay.iwiki.LangFilter</filter-class>
+  </filter>
+  
+  <filter>
+    <filter-name>MPFilter</filter-name>
+    <filter-class>org.eclipse.jetty.servlets.MultiPartFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>MPFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  
+  <filter-mapping>
+    <filter-name>UFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  
+  <filter-mapping>
+    <filter-name>LFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>BookingFilter</filter-name>
+    <filter-class>it.colletta.BookingFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>BookingFilter</filter-name>
+    <url-pattern>/renting/book/</url-pattern>
+    <url-pattern>/renting/room/</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>RFilter</filter-name>
+    <filter-class>com.mortbay.iwiki.RootFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>RFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>CFilter</filter-name>
+    <filter-class>it.colletta.CollettaFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>CFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>EFilter</filter-name>
+    <filter-class>it.colletta.EofficeFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>EFilter</filter-name>
+    <url-pattern>/eoffice/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  
+  
+  <servlet>
+    <servlet-name>Payment</servlet-name>
+    <servlet-class>it.colletta.PaymentServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Payment</servlet-name>
+    <url-pattern>/payment/*</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Forbidden</web-resource-name>
+      <url-pattern>/bin/*</url-pattern>
+      <url-pattern>/lib/*</url-pattern>
+      <url-pattern>/test/*</url-pattern>
+      <url-pattern>/src/*</url-pattern>
+      <url-pattern>/classes/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint/>
+  </security-constraint>
+
+
+</web-app>
+
+

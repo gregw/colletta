@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /renting/book/
+Disallow: /en/renting/book/
+Disallow: /it/renting/book/
+Disallow: /fr/renting/book/
+Disallow: /de/renting/book/

@@ -1,0 +1,10 @@
+Via Colombo 33
+17035 Cisano Sul Neva
+
+Tel. ${phone}
+
+!Reviewer's Comments
+[tooc]:
+$$ This is a convenient place for a coffee or a drink, and in the summer it is very nice to sit outside at a table in the square. $$
+
+Dining style: [[../../restaurants/reviews:1]]. There is a very small area at the end of the room where you can eat at lunchtime. The day’s offerings are on the blackboard hanging on the wall.

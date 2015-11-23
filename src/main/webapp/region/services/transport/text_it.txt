@@ -1,0 +1,7 @@
+!Orario del bus
+La fermata a Colletta e di fronte al'ingresso del borgo davanti la chiesa di Santa Lucia.  È scritto come "Castelbianco" sul'orario qui sotto:$$
+[Inverno]$$
+left:inverno.jpg
+
+[Estate]$$
+left:estivo.jpg

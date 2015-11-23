@@ -4,6 +4,7 @@ text_it.jsp
 text_en.jsp
 text_de.jsp
 text_fr.jsp
+*.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]
 
 # eclipse
 .classpath

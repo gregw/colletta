@@ -1,0 +1,14 @@
+!Bus Timetable
+The bus stop at Colletta is at the top of the village in front of the church of Santa Lucia. It is marked on the timetable as "Castelbianco".$$
+[Winter]$$
+left:inverno.jpg
+
+
+$$
+[Summer]$$
+left:estivo.jpg
+
+[FER]=Workdays Monday to Saturday except for holidays, [FEST]=holidays$$
+[1] During school holidays departures are delayed by 10 mins$$
+[2] Connects at Martinetto with the bus for Erli$$
+[3] School days departures are delayed by 5 mins$$

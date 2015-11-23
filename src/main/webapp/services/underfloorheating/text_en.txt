@@ -1,0 +1,15 @@
+The majority of the apartments have underfloor heating, but the circuit-breaker governing 'riscaldamento' and/or 'resistenza' for a particular room must be turned on before the heating will operate in that room. 
+
+The heating may then be controlled by programmable thermostats on the wall of each room. There is a small circle in the middle of the left hand face of the controller display, and this is filled when the current is flowing but is empty otherwise.
+
+The thermostats can be set to manual or to one of three programs (P1, P2 and P3) that switch the heating on and off on a daily pattern and control the temperature. The programmed temperature appears in the top right hand corner of the display when being set, and the ambient temperature shows constantly in the bottom right hand corner. All are in degrees Celsius.
+
+Here is how to use the manual mode of operation:
+
+Repeatedly press the S button until MAN shows near the bottom left of the display. Once MAN is showing, all you have to do is use the + and – buttons to set the required temperature (shown at the top right of the display). The system takes some time to respond to changes, so as long as the heating is switched on the room will eventually arrive at the temperature requested.
+
+By the way, the reference time and the day number of the week show on the face of the display but have no relevance to manual mode. Nevertheless, if you would like to set them, here's how:
+
+Press P to make the hours flash. Set them using the + and – buttons. Press M to store the hours. The minutes now flash, and they can be set and stored as above. The day of the week (along the top of the display) should now flash and can be set with the + and – buttons followed by M to finish. The convention for the controller is that 1 represents Monday.
+
+To clear all settings, push all the buttons at the same time and hold them in until the display shows 00:00.

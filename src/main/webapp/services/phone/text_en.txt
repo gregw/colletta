@@ -1,0 +1,12 @@
+Every apartment has an ISDN telephone handset. Numbers within the village may be dialed with just the last three digits of the number.  For example, the office may be called with  234.  
+
+The area code for Colletta is 0182, and the community code is 778. Thus to dial the Colletta office from elsewhere in Italy use 0182778234.
+ 
+!Dialing from overseas
+The international dialing code for Italy is 39, but unlike most other countries, the leading 0 is not dropped when dialing from abroad.  For example, if your internation access code is 00, and you wish to dial the an italian number like 0198 654321, then you dial 00390198654321.
+
+!Mobile Cell Phones.
+Colletta and Castelbianco have good coverage from the [[http://www.tim.it:TIM]] and [[http://www.vodafone.it:Vodafone/OMNITEL]] GSM 900/1800 networks.
+
+!Modems & Faxes
+Unfortunately due to the nature of the ISDN system, it is not possible to connect a modem or fax machine. However, there is a fax available in the business centre.

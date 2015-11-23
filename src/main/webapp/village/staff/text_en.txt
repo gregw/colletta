@@ -1,0 +1,89 @@
+The members of the team work for the condominium under the management of the administrators, Riviera House Studio Immobiliare of Albenga.
+
+The point of contact for the on-site staff is the condominium office, near the top of the steps at the entrance to the village. The internal telephone extension is 234 - from outside dial +39 0182 778 234. When there is no one in the office use the cell phone +39 333 99 39 638.
+
+For all matters concerning [[http://www.colletta.it/renting/:rentals]] please contact the Borgo Telematico team at info@colletta.it or on +39 340 12 455 87 or + 39 338 7717909
+$$
+$$
+
+{{{
+
+<table>
+
+ 
+</td></tr>
+<tr><td><img class="Staff" src="Giulia2.jpg"/>
+</td>
+<td><h3>Giulia</h3>
+Giulia is the <b>procaccia</b> – that is, she is the on-site co-ordinator for the condominium. She is a point of reference for residents and will inform the administrator of any structural problems in their apartments, as well as watching over the common areas and facilities – such as the <A HREF="http://www.colletta.it/services/internet/">internet connection</A>, the <A HREF="http://www.colletta.it/services/laundry/">launderette</A>, and the <A HREF="http://www.colletta.it/services/pool/">swimming pool</A>. She is familiar with all the units in the village, and it is her job to visually check the apartments on a regular basis and to keep them aired.
+<br><br>
+Giulia lives in the village and will offer her support in an emergency. She speaks Italian and also understands English. Contact: <a href="mailto:giulia@colletta.it">giulia@colletta.it</a>
+</td></tr>
+
+<tr><td><img class="Staff" src="giulio.jpg"/>
+</td>
+<td><h3>Giulio</h3>
+Giulio is the gardener, and it is his job to look after the common areas that belong to the condominium.
+<br><br>
+Giulio lives in the village and will offer his support in an emergency.
+</td></tr>
+
+
+</table>
+
+
+}}}
+
+!Thanks to those who have previously worked in Colletta
+
+{{{
+
+<table>
+<tr>
+
+<td><img class=OldStaff src="alex.jpg"/></td>
+<td><img class=OldStaff src="elena.jpg"/></td>
+<td><img class=OldStaff src="elisabeth.jpg"/></td>
+<td><img class=OldStaff src="foto-gabry.jpg"/></td>
+<td><img class=OldStaff src="mariarossa.jpg"/></td>
+<td><img class=OldStaff src="marina.jpg"/></td>
+<td><img class=OldStaff src="foto-mira.jpg"/></td>
+</tr>
+<tr>
+
+<td>Alex</td>
+<td>Elena</td>
+<td>Elizabetta</td>
+<td>Gabry</td>
+<td>Maria Rose</td>
+<td>Marina</td>
+<td>Mira</td>
+
+</tr>
+<tr>
+<td> </td>
+<tr>
+
+<td><img class=OldStaff src="simone.jpg"/></td> 
+<td><img class=OldStaff src="olimpia.jpg"/></td>
+<td><img class=OldStaff src="roberto.jpg"/></td>
+<td><img class=OldStaff src="foto-silvana.jpg"/></td>
+<td><img class=OldStaff src="tiziana.jpg"/></td>
+<td><img class=OldStaff src="foto-vincenzo.jpg"/></td>
+
+
+</tr>
+<tr>
+<td>Simone</td>
+<td>Olimpia</td>
+<td>Roberto</td>
+<td>Silvana</td>
+<td>Tiziana</td>
+<td>Vincenzo</td>
+ 
+
+</tr>
+
+</table>
+
+}}}

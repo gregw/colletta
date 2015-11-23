@@ -1,0 +1,13 @@
+Il sistema dei pagamenti on-line non funziona, ma puó pagare per bonifico. Le coordinate bancari sono come dato sotto. Usa il numero della prenotazione come il causale del trasferimento e manda una copia del ricevuta per mezzo di email dopo il pagamento è fatto.  Ci vuole parecchi giorni per la confermazione da Colletta. 
+
+Banca:    Cassa di Risparmio Savona $$
+Filiale:  Cisano sul Neva$$
+Conto:   Borgo Telematico S.r.l$$
+
+ABI: 6310   $$
+CAB: 49390     $$
+CCN: 4036580$$
+IBAN : IT68L0631049390000004036580$$
+SWIFT: CRSVIT2S127$$
+
+email: affitti@colletta.it

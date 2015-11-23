@@ -1,0 +1,37 @@
+The power supply in Italy is 230V AC/50Hz.
+
+!Power Plug
+Colletta uses the Italian grounded plug/socket standard, CEI 23-16/VII, includes two styles rated at 10 and 16 amps and differ in terms of contact diameter and spacing. Because they can be inserted in either direction at random, they are unpolarized. The Italian connector system is relatively standardised in Libya, Ethiopia, and Chile and is found randomly throughout North Africa.
+
+Many plug adaptors that state they are for Europe do not work in Italy.  It is best to check before you depart.  The adaptors that are commonly available in Italy only adapt from 
+the circular plug commonly used in France and Germany.  Thus two adaptors are often needed to convert a UK plug.  It may be wise to bring a powerboard to save on adaptors.
+
+On the wall in each apartment there is a fuse-box with a number of switches for opening or closing various electrical circuits. The convention in Italy is that pushing a switch up turns it on.
+
+Here is some vocabulary useful in this context:
+
+Bagno - bathroom $$
+Boiler - boiler $$
+Camera - room, or bedroom $$
+Cavo - lead, cable $$
+Cucina - kitchen $$
+Esterno - external $$
+Fancoil - air conditioning unit or extractor fan $$
+Filo - wire, cable $$
+Forno - oven $$
+Forza - power (at the sockets) $$
+Frigo - fridge $$
+Fusibile - fuse $$
+Generale - general $$
+Interrutore - switch $$
+Lavastoviglie - dish washer $$
+Lavatrice - washing machine $$
+Luce - light $$
+Piastra - hob $$
+Presa - socket $$
+Resistenza - underfloor heating $$
+Riscaldamento - heating (in general) $$
+Spina - plug $$
+Stuffetta - a power socket, usually one of an adjacent pair, controlled by the room thermostat $$
+Tensione - voltage ('sotto tensione' - live) $$
+Termostato - thermostat $$

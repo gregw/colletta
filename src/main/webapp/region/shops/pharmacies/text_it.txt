@@ -1,0 +1,11 @@
+!Farmacie
+C'è una farmacia di fronte il ristorante Gin, direttamento sotto Colletta.
+
+[Farmacia Pennavaire] $$
+17030 Castelbianco (SV) - 140, VIA PENNAVAIRE$$
+tel: 0182 779007 $$
+Oraria invernale:$$
+lunedì      8,45-12,45$$
+martedì, mercoledì, giovedì, sabato   8,45-12,45  e  15,15-19,15$$
+venerdì   15,15-19,15$$
+domenica e ferie chiuso
