@@ -38,6 +38,10 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         }
         
         String uri = request.getRequestURI();
+        if (uri.equals("/")) {
+        	response.sendRedirect("/renting/");
+        	return;
+        }
         int p = uri.indexOf(';');
         if (p >= 0)
             uri = uri.substring(0,p);
@@ -93,9 +97,9 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         out.println("<div id=\"location\">");
         out.print("<span>");
         Page[] page_path = page.getPagePath();
-        for (int i = 0; i < page_path.length; i++)
+        for (int i = 1; i < page_path.length; i++)
         {
-            if (i > 0)
+            if (i > 1)
                 out.print("&gt;&nbsp;");
             String n = page_path[i].getName(lang);
             if (n == null)
@@ -139,20 +143,10 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
 
         out.println("</div>");
 
-        // Left Menu
+        // No more left Menu 
         out.println("<table id=\"lcr\">");
         out.println("<tr>");
-        out.println("<td id=\"left\">");
-        index(out,contextPath,lang,page_path[0],page_path,0);
-
-        String menu = findExistingInPath(path,"menuL.jsp");
-        if (menu != null)
-        {
-            RequestDispatcher dispatcher = context.getRequestDispatcher(menu);
-            dispatcher.include(request,response);
-        }
-        out.println("</td>");
-
+        
         // Content
         out.println("<td id=\"content\">");
         String redirect = page.getPathProperty(null,"redirect");
@@ -177,7 +171,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
 
         // Right Menu
         out.println("<td id=\"right\">");
-        menu = findExistingInPath(path,"menuR.jsp");
+        String menu = findExistingInPath(path,"menuR.jsp");
         if (menu != null)
         {
             RequestDispatcher dispatcher = context.getRequestDispatcher(menu);
