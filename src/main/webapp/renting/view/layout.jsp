@@ -67,7 +67,12 @@
 %>
 
 <% } %>
-
+<div class="navMonth">
+<a href=".?yyyymm=${qsearch.yyyymm - 1}"><img src="${contextPath}/images/prev.gif"/></a>
+<b><%=YyyyMmDd.month(qsearch.getMm(),locale)%>&nbsp;${qsearch.yyyy}</b>
+<a href=".?yyyymm=${qsearch.yyyymm + 1}"><img src="${contextPath}/images/next.gif"/></a>
+</div>
+<div class="calendar">
 <table  class="AptL">
 <tag:AptListRow/>
 <% 
@@ -93,6 +98,7 @@
 <%}%>
 
 </table>
+</div>
 
 
 <br>

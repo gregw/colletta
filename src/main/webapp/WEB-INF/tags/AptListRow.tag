@@ -14,14 +14,6 @@
 
 <% if (apt==null) { %>
 
-
-<td colspan="8" class="AptLB">
-<a href=".?yyyymm=${qsearch.yyyymm - 1}"><img src="${contextPath}/images/prev.gif"/></a>
-<b><%=YyyyMmDd.month(qsearch.getMm(),locale)%>&nbsp;${qsearch.yyyy}</b>
-<a href=".?yyyymm=${qsearch.yyyymm + 1}"><img src="${contextPath}/images/next.gif"/></a>
-</td>
-</tr>
-<tr>
 <td class="AptLH">${properties.H_name}</td>
 <td class="AptLH">${properties.H_sleeps}</td>
 <td class="AptLH">${properties.H_bedrooms}</td>
@@ -98,7 +90,7 @@ for(int i=1;i<=qsearch.getMaxDd();i++)
         arg+="&dd="+i;
     }
     
-	out.print("<td class=\""+dc+we+"\">");
+	out.print("<td class=\"cal "+dc+we+"\">");
 	if (link)
 	    out.print("<a class=\""+dc+we+"\" href=\"../book/"+arg+"\">"+i+"</a></td>");
 	else

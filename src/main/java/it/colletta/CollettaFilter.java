@@ -81,34 +81,21 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         }
         out.println("<link REL=\"icon\" HREF=\"/favicon.gif\" TYPE=\"image/gif\">");
         out.println("<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Colletta\" href=\"/updates_" + lang + ".rss\" />");
+        out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" integrity=\"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7\" crossorigin=\"anonymous\">");
         out.println("<style type=\"text/css\" title=\"colletta\">");
-        out.println("  @import \"/colletta.css\";");
+        out.println("  @import \"http://www.egomedia.it/colletta/colletta2.css\";");
         out.println("</style>");
         out.println("</head>");
         out.println("<body id=\"colletta\">");
 
         // Header
-        out.print("<div id=\"header\">");
+        out.print("<div id=\"header\" class=\"container-fluid\">");
+        out.print("<div class=\"row\">");
+        out.print("<div class=\"col-md-12\">");
         out.print("<img src=\"/images/sinistra.gif\" class=\"logo\" alt=\"logo\"/>");
-        out.print("<h1><a href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta Di Castelbianco</span></a></h1>");
+        out.print("<h1><a href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
         out.print("<h2><span>Borgo Medioevale Telematico</span></h2>");
-
-        // Location
-        out.println("<div id=\"location\">");
-        out.print("<span>");
-        Page[] page_path = page.getPagePath();
-        for (int i = 1; i < page_path.length; i++)
-        {
-            if (i > 1)
-                out.print("&gt;&nbsp;");
-            String n = page_path[i].getName(lang);
-            if (n == null)
-                n = (String)properties.get("home");
-            out.print("<a href=\"" + contextPath + page_path[i].getPath() + "\">" + n + "</a>&nbsp;");
-        }
-        out.print("&nbsp;[" + lang + "]</span>");
-
-        out.println("</div>");
+        out.println("</div></div><div class=\"row\">");
 
         // Flags
         if (query != null)
@@ -128,27 +115,28 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
             }
         }
 
-        out.println("<div id=\"flags\">");
-        out.println("<div class=\"flag\" id=\"it\"><a href=\"" + contextPath + "/it" + path
-                + "\"><img src=\"/images/flag-it.png\" alt=\"italiano\"/></a></div>");
+        out.println("<div id=\"flags\" class=\"col-md-12\">");
+        out.println("<span class=\"flag\" id=\"it\"><a href=\"" + contextPath + "/it" + path
+                + "\"><img src=\"/images/flag-it.png\" alt=\"italiano\"/></a></span>");
         out
-                .println("<div class=\"flag\" id=\"en\"><a href=\"" + contextPath + "/en" + path
-                        + "\"><img src=\"/images/flag-en.png\" alt=\"english\"/></a></div>");
-        out.println("<div class=\"flag\" id=\"fr\"><a href=\"" + contextPath + "/fr" + path
-                + "\"><img src=\"/images/flag-fr.png\" alt=\"francais\"/></a></div>");
+                .println("<span class=\"flag\" id=\"en\"><a href=\"" + contextPath + "/en" + path
+                        + "\"><img src=\"/images/flag-en.png\" alt=\"english\"/></a></span>");
+        out.println("<span class=\"flag\" id=\"fr\"><a href=\"" + contextPath + "/fr" + path
+                + "\"><img src=\"/images/flag-fr.png\" alt=\"francais\"/></a></span>");
         out
-                .println("<div class=\"flag\" id=\"de\"><a href=\"" + contextPath + "/de" + path
-                        + "\"><img src=\"/images/flag-de.png\" alt=\"deutsch\"/></a></div>");
+                .println("<span class=\"flag\" id=\"de\"><a href=\"" + contextPath + "/de" + path
+                        + "\"><img src=\"/images/flag-de.png\" alt=\"deutsch\"/></a></span>");
         out.println("</div>");
-
+        
+        out.print("</div>");
         out.println("</div>");
 
         // No more left Menu 
-        out.println("<table id=\"lcr\">");
-        out.println("<tr>");
+        out.println("<div class=\"container-fluid\">");
+        out.println("<div class=\"row\">");
         
         // Content
-        out.println("<td id=\"content\">");
+        out.println("<div id=\"content\" class=\"col-md-9\">");
         String redirect = page.getPathProperty(null,"redirect");
         if (redirect != null)
         {
@@ -167,29 +155,29 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
             dispatcher.include(request,response);
         }
 
-        out.println("</td>");
+        out.println("</div>");
 
         // Right Menu
-        out.println("<td id=\"right\">");
+        out.println("<div class=\"sidebar col-md-3\">");
         String menu = findExistingInPath(path,"menuR.jsp");
         if (menu != null)
         {
             RequestDispatcher dispatcher = context.getRequestDispatcher(menu);
             dispatcher.include(request,response);
         }
-        out.println("</td>");
-        out.println("</tr>");
-        out.println("</table>");
-
-        // Footer
-        out.println("<div id=\"footer\">");
-        out
-                .println("<span>&copy;2006 <a href=\"http://www.mortbay.com\">Mort Bay Consulting Pty. Ltd.</a>. <a href=\"http://jetty.mortbay.org\">Powered by Jetty.</a> </span>");
-
-        out.println("&nbsp;&nbsp;<a href=\"/news_" + lang + ".rss\">news:<img src=\"/images/rss.gif\"/></a>&nbsp;&nbsp;<a href=\"/updates_" + lang
-                + ".rss\">updates:<img src=\"/images/rss.gif\"/></a>");
+        out.println("</div>");
+        out.println("</div>");
         out.println("</div>");
 
+        // Footer
+        out.println("<div id=\"footer\" class=\"container-fluid\">");
+        out.println("<div class=\"row\">");
+        out.println("<div class=\"col-md-12\">");
+        out.println("<span>&copy;2006 <a href=\"http://www.mortbay.com\">Mort Bay Consulting Pty. Ltd.</a>. <a href=\"http://jetty.mortbay.org\">Powered by Jetty.</a> </span>");
+        out.println("</div>");
+        out.println("</div>");
+        out.println("</div>");
+        
         if ("on".equals(request.getAttribute("edit")))
             editForm(request, response, uri, page, lang, out);
 
