@@ -57,7 +57,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
         out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" >");
         out.println("<head>");
-
+        out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
         String page_title = page.getPageProperty(lang,"pagetitle");
         if (page_title == null)
             page_title = page.getPathProperty(lang,"title");
@@ -80,7 +80,6 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
                 out.println("<title>Colletta - Medieval e-village with broadband - Liguria Italy</title>");
         }
         out.println("<link REL=\"icon\" HREF=\"/favicon.gif\" TYPE=\"image/gif\">");
-        out.println("<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Colletta\" href=\"/updates_" + lang + ".rss\" />");
         out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" integrity=\"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7\" crossorigin=\"anonymous\">");
         out.println("<style type=\"text/css\" title=\"colletta\">");
         out.println("  @import \"http://www.egomedia.it/colletta/colletta2.css\";");
