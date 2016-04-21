@@ -31,6 +31,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
 {
     protected void render(Page page, String lang, HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException
     {
+    	String css = Configuration.getInstance().getProperty("css.url", "http://www.egomedia.it/colletta/colletta.css"); 
         if ("false".equals(page.getProperty("colletta")))
         {
             chain.doFilter(request,response);
@@ -76,7 +77,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         out.println("<link REL=\"icon\" HREF=\"/favicon.gif\" TYPE=\"image/gif\">");
         out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" integrity=\"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7\" crossorigin=\"anonymous\">");
         out.println("<style type=\"text/css\" title=\"colletta\">");
-        out.println("  @import \"http://www.egomedia.it/colletta/colletta2.css\";");
+        out.println("  @import \"" + css + "\";");
         out.println("</style>");
         out.println("</head>");
         out.println("<body id=\"colletta\">");
