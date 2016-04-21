@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at 
+//You may obtain a copy of the License at
 //http://www.apache.org/licenses/LICENSE-2.0
 //Unless required by applicable law or agreed to in writing, software
 //distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,7 +36,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
             chain.doFilter(request,response);
             return;
         }
-        
+
         String uri = request.getRequestURI();
         if (uri.equals("/")) {
         	response.sendRedirect("/renting/view/");
@@ -67,17 +67,11 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         }
         else if ("it".equals(lang))
         {
-            if (uri.indexOf("/rent") >= 0)
-                out.println("<title>Colletta - Appartamenti vacanze e telelavoro in Ligure Italia SV</title>");
-            else
-                out.println("<title>Colletta - Borgo Medioevale Telematico - Ligure, Italia</title>");
+            out.println("<title>Colletta - Appartamenti vacanze e telelavoro in Ligure Italia SV</title>");
         }
         else
         {
-            if (uri.indexOf("/rent") >= 0)
-                out.println("<title>Colletta - Apartments for holiday or telework in Liguria Italy SV</title>");
-            else
-                out.println("<title>Colletta - Medieval e-village with broadband - Liguria Italy</title>");
+            out.println("<title>Colletta - Apartments for holiday or telework in Liguria Italy SV</title>");
         }
         out.println("<link REL=\"icon\" HREF=\"/favicon.gif\" TYPE=\"image/gif\">");
         out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" integrity=\"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7\" crossorigin=\"anonymous\">");
@@ -91,9 +85,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         out.print("<div id=\"header\" class=\"container-fluid\">");
         out.print("<div class=\"row\">");
         out.print("<div class=\"col-md-12\">");
-        out.print("<img src=\"/images/sinistra.gif\" class=\"logo\" alt=\"logo\"/>");
         out.print("<h1><a href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
-        out.print("<h2><span>Borgo Medioevale Telematico</span></h2>");
         out.println("</div></div><div class=\"row\">");
 
         // Flags
@@ -114,26 +106,24 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
             }
         }
 
-        out.println("<div id=\"flags\" class=\"col-md-12\">");
-        out.println("<span class=\"flag\" id=\"it\"><a href=\"" + contextPath + "/it" + path
-                + "\"><img src=\"/images/flag-it.png\" alt=\"italiano\"/></a></span>");
-        out
-                .println("<span class=\"flag\" id=\"en\"><a href=\"" + contextPath + "/en" + path
-                        + "\"><img src=\"/images/flag-en.png\" alt=\"english\"/></a></span>");
-        out.println("<span class=\"flag\" id=\"fr\"><a href=\"" + contextPath + "/fr" + path
-                + "\"><img src=\"/images/flag-fr.png\" alt=\"francais\"/></a></span>");
-        out
-                .println("<span class=\"flag\" id=\"de\"><a href=\"" + contextPath + "/de" + path
-                        + "\"><img src=\"/images/flag-de.png\" alt=\"deutsch\"/></a></span>");
+        out.println("<div id=\"flags\" class=\"col-md-12 text-right\">");
+        out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/it" + path
+                + "\">IT</a>");
+        out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/en" + path
+                + "\">EN</a>");
+        out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/fr" + path
+                + "\">FR</a>");
+        out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/de" + path
+                + "\">DE</a>");
         out.println("</div>");
-        
+
         out.print("</div>");
         out.println("</div>");
 
-        // No more left Menu 
+        // No more left Menu
         out.println("<div class=\"container-fluid\">");
         out.println("<div class=\"row\">");
-        
+
         // Content
         out.println("<div id=\"content\" class=\"col-md-9\">");
         String redirect = page.getPathProperty(null,"redirect");
@@ -176,7 +166,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         out.println("</div>");
         out.println("</div>");
         out.println("</div>");
-        
+
         if ("on".equals(request.getAttribute("edit")))
             editForm(request, response, uri, page, lang, out);
 
