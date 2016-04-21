@@ -39,7 +39,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         
         String uri = request.getRequestURI();
         if (uri.equals("/")) {
-        	response.sendRedirect("/renting/");
+        	response.sendRedirect("/renting/view/");
         	return;
         }
         int p = uri.indexOf(';');
