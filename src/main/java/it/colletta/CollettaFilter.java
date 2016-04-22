@@ -58,7 +58,9 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
         out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" >");
         out.println("<head>");
-        out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        if (request.getParameter("r") != null) {
+        	out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        }
         String page_title = page.getPageProperty(lang,"pagetitle");
         if (page_title == null)
             page_title = page.getPathProperty(lang,"title");

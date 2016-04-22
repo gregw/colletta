@@ -90,6 +90,12 @@ while(iter.hasNext())
 <% } else { %>
 <tag:Calendar highlight="${reservation.reservationData}" />
 <% } %>
+<table class="Cal Legenda">
+<tr><td class="Cal">&nbsp;&nbsp;</td><td class="CalAltDay">${properties.M_Cal}</td></tr>
+<tr><td class="CalR">&nbsp;&nbsp;</td><td class="CalAltDay">${properties.M_CalR}</td></tr>
+<tr><td class="CalB">&nbsp;&nbsp;</td><td class="CalAltDay">${properties.M_CalB}</td></tr>
+<tr><td class="CalX">&nbsp;&nbsp;</td><td class="CalAltDay">${properties.M_CalX}</td></tr>
+</table>
 </td>
 </tr>
 

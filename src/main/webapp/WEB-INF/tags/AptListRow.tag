@@ -21,8 +21,6 @@
 <td class="AptLH">${properties.H_garden}</td>
 <td class="AptLH">${properties.H_terrace}</td>
 <td class="AptLH">${properties.H_price}</td>
-<td class="AptLH">${properties.H_photo}</td>
-
 
 <% } else { 
   Apartment apartment=Apartment.getApartment(apt.getDirName());
@@ -30,7 +28,7 @@
 %>
 
 
-<td class="AptL"><a href="${apt.dirName}">${apt.displayName}</a></td>
+<td class="AptL"><strong>${apt.displayName}</strong></td>
 <td class="AptL"><%=apt.getProperty("A_layout")%></td>
 <td class="AptL"><%=apt.getProperty("A_bedrooms")%></td>
 <td class="AptLC"><% if(apt.getIntProperty("A_kitchen")>0){%><img src="${contextPath}/images/tick.gif"/><%}else{%><img src="${contextPath}/images/cross.gif"/><%}%></td>
@@ -38,8 +36,6 @@
 <td class="AptLC"><% if(apt.getIntProperty("A_terrace")>0){%><img src="${contextPath}/images/tick.gif"/><%}else{%><img src="${contextPath}/images/cross.gif"/><%}%></td>
 <td class="AptL">&euro;<%=apartment.getListLow7()%>-&euro;<%=apartment.getListPeak7()%></td>
 
-<td rowspan="2" class="AptLB"><a href="${apt.dirName}"><img class="AptTiny"
-src="${apt.dirName}/apt0-tiny.jpg"/></a></td>
 <td rowspan="2" class="AptFS"><a href="${apt.dirName}">
 <% if(apt.getProperty("A_forsale")!=null&&false) { %>
 <img class="AptTiny" src="/images/forsale.jpg"/>
