@@ -14,14 +14,6 @@
 
 <% if (apt==null) { %>
 
-
-<td colspan="8" class="AptLB">
-<a href=".?yyyymm=${qsearch.yyyymm - 1}"><img src="${contextPath}/images/prev.gif"/></a>
-<b><%=YyyyMmDd.month(qsearch.getMm(),locale)%>&nbsp;${qsearch.yyyy}</b>
-<a href=".?yyyymm=${qsearch.yyyymm + 1}"><img src="${contextPath}/images/next.gif"/></a>
-</td>
-</tr>
-<tr>
 <td class="AptLH">${properties.H_name}</td>
 <td class="AptLH">${properties.H_sleeps}</td>
 <td class="AptLH">${properties.H_bedrooms}</td>
@@ -29,8 +21,6 @@
 <td class="AptLH">${properties.H_garden}</td>
 <td class="AptLH">${properties.H_terrace}</td>
 <td class="AptLH">${properties.H_price}</td>
-<td class="AptLH">${properties.H_photo}</td>
-
 
 <% } else { 
   Apartment apartment=Apartment.getApartment(apt.getDirName());
@@ -38,7 +28,7 @@
 %>
 
 
-<td class="AptL"><a href="${apt.dirName}">${apt.displayName}</a></td>
+<td class="AptL"><strong>${apt.displayName}</strong></td>
 <td class="AptL"><%=apt.getProperty("A_layout")%></td>
 <td class="AptL"><%=apt.getProperty("A_bedrooms")%></td>
 <td class="AptLC"><% if(apt.getIntProperty("A_kitchen")>0){%><img src="${contextPath}/images/tick.gif"/><%}else{%><img src="${contextPath}/images/cross.gif"/><%}%></td>
@@ -46,8 +36,6 @@
 <td class="AptLC"><% if(apt.getIntProperty("A_terrace")>0){%><img src="${contextPath}/images/tick.gif"/><%}else{%><img src="${contextPath}/images/cross.gif"/><%}%></td>
 <td class="AptL">&euro;<%=apartment.getListLow7()%>-&euro;<%=apartment.getListPeak7()%></td>
 
-<td rowspan="2" class="AptLB"><a href="${apt.dirName}"><img class="AptTiny"
-src="${apt.dirName}/apt0-tiny.jpg"/></a></td>
 <td rowspan="2" class="AptFS"><a href="${apt.dirName}">
 <% if(apt.getProperty("A_forsale")!=null&&false) { %>
 <img class="AptTiny" src="/images/forsale.jpg"/>
@@ -98,7 +86,7 @@ for(int i=1;i<=qsearch.getMaxDd();i++)
         arg+="&dd="+i;
     }
     
-	out.print("<td class=\""+dc+we+"\">");
+	out.print("<td class=\"cal "+dc+we+"\">");
 	if (link)
 	    out.print("<a class=\""+dc+we+"\" href=\"../book/"+arg+"\">"+i+"</a></td>");
 	else

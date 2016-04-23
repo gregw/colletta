@@ -49,8 +49,6 @@
 <%} 
   out.println("</div>");
 } %>
-  &nbsp;<br/>
-  &nbsp;<br/>
-  <a href="http://www.treehouseitalia.it"><img class="left" src="treehouse.png"/></a>
+
 
 

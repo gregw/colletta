@@ -29,12 +29,12 @@
         out.println("<table class=\"Cal\">");
         out.println("<tr><td class=\"CalMonth\" >");
         out.println("<a href=\""+request.getRequestURI()+q+"&yyyymm="+
-                YyyyMmDd.normalizeYyyyMm(date.getYyyymm()-1)+"\"><img src=\""+request.getContextPath()+"/images/prev.gif\"/></a>");
+                YyyyMmDd.normalizeYyyyMm(date.getYyyymm()-1)+"\" class=\"btn btn-default\"><i class=\"glyphicon glyphicon-backward\"></i></a>");
         out.println("</td><td class=\"CalMonth\" colspan=\"5\">");
         out.println(YyyyMmDd.month(date.getMm(),locale)+"&nbsp;-&nbsp;"+YyyyMmDd.month(date.getMm(),altLocale)+"<br/>"+date.getYyyy());
         out.println("</td><td class=\"CalMonth\" >");
         out.println("<a href=\""+request.getRequestURI()+q+"&yyyymm="+
-                YyyyMmDd.normalizeYyyyMm(date.getYyyymm()+1)+"\"><img src=\""+request.getContextPath()+"/images/next.gif\"/></a>");
+                YyyyMmDd.normalizeYyyyMm(date.getYyyymm()+1)+"\" class=\"btn btn-default\"><i class=\"glyphicon glyphicon-forward\"></i></a>");
         out.println("</td></tr>");
 
         out.println("<tr>");

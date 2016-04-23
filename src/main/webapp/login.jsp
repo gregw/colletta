@@ -12,21 +12,23 @@
     
 <h1>${properties.H_login}</h1>
 <form name="Login" method="POST" >
-<table class="QSearch">
-<tr>
-<td class="QSearch">${properties.H_user}:</td>
-<td class="QSearch"><input class="QSearch" type="Text" name="name" size="6"/></td>
-</tr>
-<tr>
-<td class="QSearch">${properties.H_password}:</td>
-<td class="QSearch"><input class="QSearch" type="Password" name="password" size="6"/></td>
-</tr>
-<tr>
-<td class="QSearch" colspan="2">
+
+<div class="QSearch">
+<span class="QSearch">${properties.H_user}:</span>
+<span class="QSearch"><input class="QSearch" type="Text" name="name" size="6"/></span>
+</div>
+
+<div class="QSearch">
+<span class="QSearch">${properties.H_password}:</span>
+<span class="QSearch"><input class="QSearch" type="Password" name="password" size="6"/></span>
+</div>
+
+<div>
+<span class="QSearch" colspan="2">
 <input type="submit" class="QSearch" name="login" value="${properties.H_login}"/>
-</td>
-</tr>
-</table>
+</span>
+</div>
+
 <input type="hidden" name="form" value="login"/>
 </form>
 
