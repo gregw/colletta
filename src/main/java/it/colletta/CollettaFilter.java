@@ -87,9 +87,9 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         // Header
         out.print("<div id=\"header\" class=\"container-fluid\">");
         out.print("<div class=\"row\">");
-        out.print("<div class=\"col-md-12\">");
-        out.print("<h1><a href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
-        out.println("</div></div><div class=\"row\">");
+        out.print("<div class=\"col-md-6\">");
+        out.print("<h1><a class=\"logo\" href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
+        out.println("</div>");
 
         // Flags
         if (query != null)
@@ -109,7 +109,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
             }
         }
 
-        out.println("<div id=\"flags\" class=\"col-md-12 text-right\">");
+        out.println("<div id=\"flags\" class=\"col-md-6 text-right\"><h1>");
         out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/it" + path
                 + "\">IT</a>");
         out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/en" + path
@@ -118,7 +118,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
                 + "\">FR</a>");
         out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/de" + path
                 + "\">DE</a>");
-        out.println("</div>");
+        out.println("</h1></div>");
 
         out.print("</div>");
         out.println("</div>");
