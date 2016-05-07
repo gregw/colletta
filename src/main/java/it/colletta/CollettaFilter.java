@@ -87,7 +87,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         // Header
         out.print("<div id=\"header\" class=\"container-fluid\">");
         out.print("<div class=\"row\">");
-        out.print("<div class=\"logo col-md-6\">");
+        out.print("<div class=\"logo col-sm-6\">");
         out.print("<h1><a href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
         out.println("</div>");
 
@@ -109,7 +109,7 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
             }
         }
 
-        out.println("<div id=\"flags\" class=\"col-md-6 text-right\"><h1>");
+        out.println("<div id=\"flags\" class=\"col-sm-6 text-right\"><h1>");
         out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/it" + path
                 + "\">IT</a>");
         out.println("<a class=\"btn btn-default\" href=\"" + contextPath + "/en" + path
