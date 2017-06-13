@@ -7,27 +7,13 @@
 
 package it.colletta;
 
-import it.colletta.payment.BankPass;
-import it.colletta.payment.XPay;
-import it.colletta.reservation.Address;
-import it.colletta.reservation.Adjustment;
-import it.colletta.reservation.OccupancyManager;
-import it.colletta.reservation.OccupancyManagerFactory;
-import it.colletta.reservation.ReservationData;
-import it.colletta.reservation.ReservationManager;
-import it.colletta.reservation.ReservationStatus;
-import it.colletta.reservation.ReservationTimer;
-import it.colletta.reservation.discount.Discount;
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,6 +31,17 @@ import com.mortbay.iwiki.LangFilter;
 import com.mortbay.iwiki.Page;
 import com.mortbay.iwiki.User;
 import com.mortbay.iwiki.YyyyMmDd;
+
+import it.colletta.payment.XPay;
+import it.colletta.reservation.Address;
+import it.colletta.reservation.Adjustment;
+import it.colletta.reservation.OccupancyManager;
+import it.colletta.reservation.OccupancyManagerFactory;
+import it.colletta.reservation.ReservationData;
+import it.colletta.reservation.ReservationManager;
+import it.colletta.reservation.ReservationStatus;
+import it.colletta.reservation.ReservationTimer;
+import it.colletta.reservation.discount.Discount;
 
 /* ------------------------------------------------------------------------------- */
 /**
@@ -98,39 +95,20 @@ public class BookingFilter extends FormFilter
             session.removeAttribute("reservation");
         }
         
-        
         //If the user made a payment and it was:
-        // successful, cancelled or in error we will land here
-        
-        if (null != request.getParameter(XPay.__TERMINAL_ID_PROP) && "post".equalsIgnoreCase(((HttpServletRequest)request).getMethod()))
+        // successful, cancelled or in error we will land here     
+        if (null != request.getParameter(XPay.COD_TRANS) && null != request.getParameter(XPay.ESITO))
         {
             String uri =((HttpServletRequest)request).getRequestURI();
             
-            System.err.println("XPay success, cancel or error");
-            //if there is an AUTH_CODE, then this is a VPOSNotification
-            //that was sent to the xpay.resulturl
-            String s = request.getParameter(XPay.__AUTH_CODE_PROP);
-            if (s!=null)
+            try
             {
-                System.err.println("VPOSNotification received authcode= "+s);
-                try
-                {
-                    uri =  handlePaymentVerification((HttpServletRequest)request);
-                }
-                catch (Exception e)
-                {
-                    context.log("Error processing VPOS notification", e);
-                }
+                uri =  handleReturnFromPayment((HttpServletRequest)request);
             }
-
-            //if there was a RESPONSE CODE, and the RESPONSE code > 0
-            //there was an error
-            int resCode = XPay.getVPOSResCode((HttpServletRequest)request);
-            System.err.println("XPay response code="+resCode);
-            if (resCode > XPay.__RESPONSE_0K)
+            catch (Exception e)
             {
-                context.log("Error on payment transactionId="+request.getParameter(XPay.__TRANSACTION_ID_PROP)+" error= "+resCode);
-            }  
+                context.log("Error processing XPay notification", e);
+            }
             
             ((HttpServletResponse)response).sendRedirect(uri);
             return;
@@ -142,32 +120,43 @@ public class BookingFilter extends FormFilter
     /* ------------------------------------------------------------------------------- */
     protected String handleGET(HttpServletRequest srequest, HttpServletResponse sresponse, String form) throws Exception
     {
+        //TODO I don't think we'll ever get here because in doFilter we are going to call handleReturnFromPayment
+        //regardless of a GET or POST
         initValues(srequest);
 
         srequest.getSession(true);
 
-        String s = srequest.getParameter(XPay.__TERMINAL_ID_PROP);
-        if (s == null) return null; // not an XPay payment message, or it is but the payment
-                                    // was cancelled
+        String s = srequest.getParameter(XPay.ESITO);
+        if (s == null) return null; // not an XPay payment message
 
-        return handlePaymentVerification(srequest);
+        return handleReturnFromPayment(srequest);
     }
 
     /* ------------------------------------------------------------------------------- */
     /**
-     * Handle a message from the XPay system regarding a payment. We will only receive a hit
-     * here in the BookingFilter if the payment succeeded. If the payment was cancelled/failed,
-     * XPay redirects the client to the Colletta "view booking" url, but without payment params, 
-     * so we don't get to this method.
-     * NOTE that the XPay message to Colletta as the merchant is handled by PaymentServlet
+     * Handle a redirect from the Xpay system after the user has finished with the
+     * payment system.
      * 
-     * @param srequest the request with the BankPass message
+     * The user might have:
+     * <ul>
+     * <li> cancelled the payment: xpay redirects to URL_BACK</li>
+     * <li> produced an error during payment: xpay redirects to URL_BACK </li>
+     * <li> been successful: xpay redirects to URL </li>
+     * </ul>
+     * 
+     * Currently both URL_BACK and URL point to this filter, although xpay sends
+     * back a different set of params to each.
+     * 
+     * NOTE that the XPay notification POST message (to URL_POST) is handled 
+     * by the PaymentServlet.
+     * 
+     * @param srequest the request with the Xpay message
      * @return
      * @throws Exception
      */
-    protected String handlePaymentVerification(HttpServletRequest srequest) throws Exception
+    protected String handleReturnFromPayment(HttpServletRequest srequest) throws Exception
     {
-        context.log("handling PAYMENT");
+        context.log("handling return from PAYMENT");
         String resId = XPay.handlePayment(srequest, context);
 
         return srequest.getRequestURI() + "?ref=" + resId + "&booking=view";
@@ -184,8 +173,6 @@ public class BookingFilter extends FormFilter
         try
         {
             HttpSession session = srequest.getSession(true);
-            
-
 
             String action = getAction(srequest);
 

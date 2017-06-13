@@ -3,14 +3,14 @@ package it.colletta.payment;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
-import com.mortbay.iwiki.StringUtil;
 import com.mortbay.iwiki.User;
 
 import it.colletta.Configuration;
@@ -19,105 +19,229 @@ import it.colletta.reservation.ReservationManager;
 
 public class XPay 
 {
-    public static final int __RESPONSE_0K = 0;
-    public static final int __RESPONSE_PARSE_ERROR = 1;
-    public static final int __RESPONSE_TECH_ERROR = 2;
-    public static final int __RESPONSE_DUP_TRANS = 3;
-    public static final int __RESPONSE_BAD_LANG = 4;
-    public static final int __RESPONSE_BAD_URL = 5;
-    public static final int __RESPONSE_BAD_IP = 6;
-    public static final int __RESPONSE_BAD_OPT = 7;
-    public static final int __RESPONSE_BAD_MAC = 8;
-    public static final int __RESPONSE_BAD_VERSION = 9;
-    public static final int __RESPONSE_BAD_ACTION_CODE = 10;
-    public static final int __RESPONSE_BAD_AMOUNT = 11;
-    public static final int __RESPONSE_BAD_CURRENCY = 12;
-    public static final int __RESPONSE_BAD_EMAIL = 13;
-    public static final int __RESPONSE_BAD_TRANS = 15;
-    public static final int __RESPONSE_BAD_TERMINAL_ID = 16;
-    public static final int __RESPONSE_MAX_TRANS = 17;
-    
-    public static final String __LANG_ITA = "ITA";
-    public static final String __LANG_ENG = "ENG";
-    public static final String __LANG_FRA = "FRA";
-    public static final String __LANG_ESP = "ESP";
-    public static final String __LANG_DEU = "DEU";
-    
-    public static final String __CURR_EUR = "EUR";//euro
-    public static final String __CURR_978 = "978"; //euro
-    
-    public static final String __AUT_CONT = "AUT-CONT"; //contab. implicit
-    public static final String __AUT = "AUT"; //contab. explicit
-    
-    public static final String __TERMINAL_ID_PROP = "TERMINAL_ID";
-    public static final String __TRANSACTION_ID_PROP = "TRANSACTION_ID";
-    public static final String __AMOUNT_PROP = "AMOUNT";
-    public static final String __CURRENCY_PROP = "CURRENCY";
-    public static final String __VERSION_CODE_PROP = "VERSION_CODE";
-    public static final String __CO_PLATFORM_PROP = "CO_PLATFORM";
-    public static final String __ACTION_CODE_PROP = "ACTION_CODE";
-    public static final String __EMAIL_PROP = "EMAIL";
-    public static final String __MAC_PROP = "MAC";
-    public static final String __RESPONSE_PROP = "RESPONSE";
-    public static final String __LANGUAGE_PROP = "LANGUAGE";
-    public static final String __NOTIFICATION_URL_PROP = "NOTIFICATION_URL";
-    public static final String __RESULT_URL_PROP = "RESULT_URL";
-    public static final String __ERROR_URL_PROP = "ERROR_URL";
-    public static final String __ANNULMENT_URL_PROP = "ANNULMENT_URL";
-    public static final String __DESC_ORDER_PROP = "DESC_ORDER";
-    public static final String __MESSAGE_TYPE_PROP = "MESSAGE_TYPE";
-    public static final String __CARD_TYPE_PROP = "CARD_TYPE";
-    public static final String __AUTH_CODE_PROP = "AUTH_CODE";
-    
-    public static final String __PAYMENT_URL_PROP = "PAYMENT_URL"; //used by XPay.tag file
- 
 
-    private static final String __MAC_KEY_VALUE;
-    private static final String __TERMINAL_ID_VALUE;
-    private static final String __CO_PLATFORM_VALUE;
-    private static final String __VERSION_VALUE;
-    private static final String __ANNULMENT_URL_VALUE;
-    private static final String __NOTIFICATION_URL_VALUE;
-    private static final String __ERROR_URL_VALUE;
-    private static final String __RESULT_URL_VALUE;
-    private static final String __PAYMENT_URL_VALUE;
+    public enum ResponseCode
+    {
+        CODE_0("0", "Autorizzazione concessa"),
+        CODE_20("20", "Ordine non presente"),
+        CODE_101("101", "Parametri errati or mancanti"),
+        CODE_102("102", "PAN errato"),
+        CODE_103("103", "Autorizzazione negata dall'emittente della carta"),
+        CODE_104("104", "Errore generico"),
+        CODE_108("108", "Ordine gia registrato"),
+        CODE_109("109", "Errore tecnico"),
+        CODE_110("110", "Numero contratto gia presente"),
+        CODE_111("111", "Mac errato"),
+        CODE_112("112", "Transazione negata per autenticazione VBV o SC fallita o non possiblile"),
+        CODE_113("113", "Numero contratto non presente in archivio"),   
+        CODE_114("114","Merchant non abilitato al pagamento multipo sul gruppo"),
+        CODE_115("115","Codice gruppo non presente"),
+        CODE_116("116", "3D secure annullato da utente"),
+        CODE_117("117", "Carta non autorizzata causa applicazione regole BIN Table"),
+        CODE_118("118", "Controllo Blacklist"),
+        CODE_119("119", "Esercente non abilitato ad operare in questa modalita"),
+        CODE_120("120", "Circuito non accettato"), 
+        CODE_121("121", "Transazione chiusa per timeout"),
+        CODE_122("122", "Numera di tentativi di retry esauriti"),
+        CODE_400("400", "Auth denied"),
+        CODE_401("401", "Expired card"),
+        CODE_402("402", "Restricted card"),
+        CODE_403("403", "Invalid merchant"),
+        CODE_404("404", "Transaction not permitted"),
+        CODE_405("405", "Insufficient funds"),
+        CODE_406("406", "Technical problem"),
+        CODE_407("407", "Host not found");
+        
+        private final String _code;
+        private final String _reason;
+        
+        ResponseCode(String code, String reason)
+        {
+            _code = code;
+            _reason = reason;
+        }
+
+        public String getCode()
+        {
+            return _code;
+        }
+
+        public String getReason()
+        {
+            return _reason;
+        }
+        
+        public String toString()
+        {
+            return _code+":"+_reason;
+        }
+    }
+
+    
+    public enum Language 
+    {
+        ITALIAN("IT", "ITA"),
+        ENGLISH("EN", "ENG"),
+        FRENCH("FR", "FRA"),
+        GERMAN("DE", "GER");
+        
+        private final String _xpay;
+        private final String _ours;
+        
+        Language(String ours, String theirs)
+        {
+            _ours = ours;
+            _xpay = theirs;
+        }
+        
+        public String ours()
+        {
+            return _ours;
+        }
+        
+        public String theirs()
+        {
+            return _xpay;
+        }
+    }
+    
+    public static Map<String, String> __ourLanguageToTheirs;
+    public static Map<String, ResponseCode> __responseCodes;
+     
+    public static final String PAYMENT_URL_PROP = "PAYMENT_URL"; //used by XPay.tag file
+    
+    private static final String MAC_SECRET; //our mac secret key
+    private static final String ALIAS_VALUE; //our merchant id
+    private static final String URL_BACK_VALUE; //url on our site to return to if payment cancelled or errored
+    private static final String URL_VALUE; //url on our site to return to after payment
+    private static final String NOTIFICATION_URL_VALUE; //our url to which xpay does a POST to confirm payment
+    private static final String PAYMENT_URL_VALUE; //url for xpay payments on cartasi site
+    
+    /*
+     * Fields for messages SENT to XPAY
+     * 
+     * Message example 1: EU50 payment
+     * https://ecommerce.cartasi.it/ecomm/ecomm/DispatcherServlet?alias=valore
+     *         &importo=5000
+     *         &divisa=EUR
+     *         &codTrans=990101-00001
+     *         &mail=xxx@xxxx.it
+     *         &url=http://www.xxxxx.it
+     *         &session_id=xxxxxxxx
+     *         &mac=yyyy
+     *         &languageId=ITA
+     *         
+     * Message example 2: EU50,12 payment
+     * https://ecommerce.cartasi.it/ecomm/ecomm/DispatcherServlet?alias=valore
+     *         &importo=5012
+     *         &divisa=EUR
+     *         &codTrans=990101-00001
+     *         &mail=xxx@xxxx.it
+     *         &url=http://www.xxxxx.it
+     *         &session_id=xxxxxxxx
+     *         &mac=yyyy
+     *         &languageId=ENG
+     */
+    public static final String ALIAS = "alias";           //identifies merchant
+    public static final String IMPORTO = "importo";       //amount
+    public static final String DIVISA = "divisa";         //currency, only EUR
+    public static final String COD_TRANS = "codTrans";    //unique transaction id, can't contain #
+    public static final String URL = "url";               //our url to return user after paying
+    public static final String URL_BACK = "url_back";     //our url if cancelled/error
+    public static final String URL_POST = "urlpost";      //our url for confirmation of payment via POST
+    public static final String MAC = "mac";               //calculated mac
+    public static final String MAIL = "mail";             //email of renter
+    public static final String LANGUAGE_ID = "languageId";//code for language of renter
+    public static final String SESSION_ID = "session_id"; //session id of renter
+    public static final String OPTION_CF = "OPTION_CF";   //codice fiscale of renter
+    public static final String TCONTAB = "TCONTAB";       //I = immediate
+    
+    
+
+    /*
+     * Fields for messages RECEIVED from XPAY
+     */
+    public static final String BRAND = "brand";           //type of card used to pay
+    public static final String DATA = "data";             //yyyymmdd date of completed transaction
+    public static final String ORARIO = "orario";         //hhmmss time of completed transaction
+    public static final String COD_AUT = "codAut";        //auth code from card on success
+    public static final String ESITO = "esito";           //OK|KO for urlpost, or ANNULLO|ERRORE for url_back
+    public static final String CODICE_ESITO = "codiceEsito"; //3 chars
+    
+
+    public static final String ANNULLO = "ANNULLO";
+    public static final String ERRORE = "ERRORE";
+    public static final String OK = "OK";
+    public static final String KO = "KO";
+
 
     private static final List idtransList;/* list of already processed transaction ids*/
+    
+    
   
     /* Initialize static data */
     static
     {
-        __MAC_KEY_VALUE = Configuration.getInstance().getProperty("xpay.mackey");
-        __TERMINAL_ID_VALUE = Configuration.getInstance().getProperty("xpay.terminalid"); 
-        __CO_PLATFORM_VALUE = Configuration.getInstance().getProperty("xpay.coplatform");
-        __VERSION_VALUE = Configuration.getInstance().getProperty("xpay.version");
-        __PAYMENT_URL_VALUE = Configuration.getInstance().getProperty("xpay.paymenturl");
-        __ANNULMENT_URL_VALUE = Configuration.getInstance().getProperty("colletta.website")+Configuration.getInstance().getProperty("xpay.annulmenturl");
-        __ERROR_URL_VALUE = Configuration.getInstance().getProperty("colletta.website")+Configuration.getInstance().getProperty("xpay.errorurl");
-        __NOTIFICATION_URL_VALUE = Configuration.getInstance().getProperty("colletta.website")+Configuration.getInstance().getProperty("xpay.notificationurl");
-        __RESULT_URL_VALUE = Configuration.getInstance().getProperty("colletta.website")+Configuration.getInstance().getProperty("xpay.resulturl");
-        idtransList = new ArrayList();
-    }
-    
-    
-    public static int getVPOSResCode (HttpServletRequest request)
-    {
-        String s = request.getParameter(__RESPONSE_PROP);
-        System.err.println("RESPONSE = "+s);
-        if (s == null)
-            return -1;
+        MAC_SECRET = Configuration.getInstance().getProperty("xpay.mackey");
+        ALIAS_VALUE = Configuration.getInstance().getProperty("xpay.alias"); 
         
-        try
-        {
-            int i = Integer.parseInt(s.trim());
-            return i;
-        }
-        catch (NumberFormatException e)
-        {
-            return -1;
-        }
+        PAYMENT_URL_VALUE = Configuration.getInstance().getProperty("xpay.paymenturl");
+        URL_VALUE = Configuration.getInstance().getProperty("colletta.website")+Configuration.getInstance().getProperty("xpay.resulturl");
+        URL_BACK_VALUE = Configuration.getInstance().getProperty("colletta.website")+Configuration.getInstance().getProperty("xpay.errorurl");
+        NOTIFICATION_URL_VALUE = Configuration.getInstance().getProperty("colletta.website")+Configuration.getInstance().getProperty("xpay.notificationurl");
+
+        idtransList = new ArrayList();
+        
+        __ourLanguageToTheirs = new HashMap<String, String>();
+        __ourLanguageToTheirs.put(Language.ITALIAN.ours(), Language.ITALIAN.theirs());
+        __ourLanguageToTheirs.put(Language.FRENCH.ours(), Language.FRENCH.theirs());
+        __ourLanguageToTheirs.put(Language.ENGLISH.ours(), Language.ENGLISH.theirs());
+        __ourLanguageToTheirs.put(Language.GERMAN.ours(), Language.ITALIAN.theirs());
+
+        __responseCodes = new HashMap<String, ResponseCode>();
+        __responseCodes.put(ResponseCode.CODE_0.getCode(),ResponseCode.CODE_0);
+        __responseCodes.put(ResponseCode.CODE_20.getCode(),ResponseCode.CODE_20);
+        __responseCodes.put(ResponseCode.CODE_101.getCode(),ResponseCode.CODE_101);
+        __responseCodes.put(ResponseCode.CODE_102.getCode(),ResponseCode.CODE_102);
+        __responseCodes.put(ResponseCode.CODE_103.getCode(),ResponseCode.CODE_103);
+        __responseCodes.put(ResponseCode.CODE_104.getCode(),ResponseCode.CODE_104);
+        __responseCodes.put(ResponseCode.CODE_108.getCode(),ResponseCode.CODE_108);
+        __responseCodes.put(ResponseCode.CODE_109.getCode(),ResponseCode.CODE_109);
+        __responseCodes.put(ResponseCode.CODE_110.getCode(),ResponseCode.CODE_110);
+        __responseCodes.put(ResponseCode.CODE_111.getCode(),ResponseCode.CODE_111);
+        __responseCodes.put(ResponseCode.CODE_112.getCode(),ResponseCode.CODE_112);
+        __responseCodes.put(ResponseCode.CODE_113.getCode(),ResponseCode.CODE_113);
+        __responseCodes.put(ResponseCode.CODE_114.getCode(),ResponseCode.CODE_114);
+        __responseCodes.put(ResponseCode.CODE_115.getCode(),ResponseCode.CODE_115);
+        __responseCodes.put(ResponseCode.CODE_116.getCode(),ResponseCode.CODE_116);
+        __responseCodes.put(ResponseCode.CODE_117.getCode(),ResponseCode.CODE_117);
+        __responseCodes.put(ResponseCode.CODE_118.getCode(),ResponseCode.CODE_118);
+        __responseCodes.put(ResponseCode.CODE_119.getCode(),ResponseCode.CODE_119);
+        __responseCodes.put(ResponseCode.CODE_120.getCode(),ResponseCode.CODE_120);
+        __responseCodes.put(ResponseCode.CODE_121.getCode(),ResponseCode.CODE_121);
+        __responseCodes.put(ResponseCode.CODE_122.getCode(),ResponseCode.CODE_122);
+        __responseCodes.put(ResponseCode.CODE_400.getCode(),ResponseCode.CODE_400);
+        __responseCodes.put(ResponseCode.CODE_401.getCode(),ResponseCode.CODE_401);
+        __responseCodes.put(ResponseCode.CODE_402.getCode(),ResponseCode.CODE_402);
+        __responseCodes.put(ResponseCode.CODE_403.getCode(),ResponseCode.CODE_403);
+        __responseCodes.put(ResponseCode.CODE_404.getCode(),ResponseCode.CODE_404);
+        __responseCodes.put(ResponseCode.CODE_405.getCode(),ResponseCode.CODE_405);
+        __responseCodes.put(ResponseCode.CODE_406.getCode(),ResponseCode.CODE_406);
+        __responseCodes.put(ResponseCode.CODE_407.getCode(),ResponseCode.CODE_407);
     }
+
+
+
     
+    /**
+     * Called when the user has cancelled, errored or been successful with
+     * a payment. There are different params sent in each case.
+     * 
+     * @param srequest
+     * @param context
+     * @return
+     * @throws Exception
+     */
     public static String handlePayment (HttpServletRequest srequest, ServletContext context)
     throws Exception
     {
@@ -125,17 +249,15 @@ public class XPay
         User.setCurrentUser(User.XPAY);
         try
         {
-            //Verify that the payment confirmation message is authentic
-            if (!verifyVPOSNotificationMAC(srequest))
+            //Verify that the payment confirmation message is authentic, if it contains a MAC
+            if ((null != srequest.getParameter(MAC)) && !verifyReceivedMAC(srequest))
             {
                 //authentication of the message failed, log it
-                context.log ("AUTH FAILED for XPAY NOTIFICATION: "+srequest.toString());
+                context.log ("AUTH FAILED for XPAY: "+srequest.toString());
                 return null;
             }
             
-            String transactionId = srequest.getParameter(__TRANSACTION_ID_PROP);
-            
-            //Notification message is authentic, and by definition positive, so process it
+            String transactionId = srequest.getParameter(COD_TRANS);                   
             ReservationManager resMgr = ReservationManager.getInstance();
             synchronized (idtransList) 
             {
@@ -148,44 +270,51 @@ public class XPay
                 }
                 else
                 {
-                    //payment message not already received, process the payment
+                    //payment message not already received
                     idtransList.add(transactionId);
                                        
-                    if (srequest.getParameter(__CURRENCY_PROP).equals(__CURR_978))
-                    {   
-                        
-                        String resId = transactionId;
-                        int i = resId.indexOf("-");
-                        if (i >= 0)
-                            resId = resId.substring(0,i);
-                        
-                        //Get last 8 chars, which is the zero-padded reservation id
-                        if (resId.length() > 8)
-                        {
-                            resId = resId.substring(resId.length()-8);
-                        }
-                        
-                        ReservationData reservation=resMgr.findReservation(resId);
-                        if (reservation==null)
-                        {
-                            throw new Exception ("Cannot make payment transactionId="+transactionId+": no such reservation resId="+resId);
-                        }
-                        
-                        String str = srequest.getParameter(__AMOUNT_PROP);
-                        str = str.substring(0, str.length()-2) + "." + str.substring(str.length()-2);
-                        BigDecimal amount = new BigDecimal(str);    
-                        resMgr.makePayment(resId,amount,transactionId+", "+srequest.getParameter(__CARD_TYPE_PROP)+", "+srequest.getParameter(__AUTH_CODE_PROP));
-                        
-                        context.log ("PAYMENT PROCESSED: resId="+resId+" for amount(EUR)="+str+" by "+srequest.getParameter(__CARD_TYPE_PROP)+" auth code="+srequest.getParameter(__AUTH_CODE_PROP));
-                        return resId;
-                    }           
-                    else
+                    String resId = getResIdFromTransactionId(transactionId);
+                    
+                    String esito = srequest.getParameter(ESITO);
+                    
+                    //if we are called as the URL_BACK it is only with cancellation or error
+                    if (ANNULLO.equalsIgnoreCase(esito) || ERRORE.equalsIgnoreCase(esito))
                     {
-                        throw new Exception ("Payment was not in EURO");
+                        String tmp = srequest.getParameter(CODICE_ESITO);
+                        ResponseCode code = (tmp != null?__responseCodes.get(tmp):null);
+                        context.log ("Error or cancelled payment for res "+resId+"."+(code == null?"":code.toString()));
+                        return resId;
                     }
+                    
+                    //if we are called as the URL (with GET) or URL_POST(with POST)
+                    if (KO.equalsIgnoreCase(esito))
+                    {
+                        String tmp = srequest.getParameter(CODICE_ESITO);
+                        ResponseCode code = (tmp != null?__responseCodes.get(tmp):null);
+                        context.log ("Error in payment for res "+resId+"."+(code == null?"":code.toString()));
+                        return resId;
+                    }
+
+                    //otherwise it is a successful payment
+                    String brand = srequest.getParameter(BRAND);
+                    String data = srequest.getParameter(DATA);
+                    String orario = srequest.getParameter(ORARIO);
+                    String codAut = srequest.getParameter(COD_AUT);
+                    String importo = srequest.getParameter(IMPORTO);
+
+                    ReservationData reservation=resMgr.findReservation(resId);
+                    if (reservation==null)
+                        throw new Exception ("Cannot make payment transactionId="+transactionId+": no such reservation resId="+resId);
+
+                    
+                    importo = importo.substring(0, importo.length()-2) + "." + importo.substring(importo.length()-2);
+                    BigDecimal amount = new BigDecimal(importo);    
+                    resMgr.makePayment(resId,amount,transactionId+", "+brand+", "+codAut);
+
+                    context.log ("PAYMENT PROCESSED: resId="+resId+" for amount(EUR)="+importo+" by "+brand+" auth code="+codAut+" on "+data+" at "+orario);
+                    return resId;
                 }
             }  
-
         }
         finally
         {
@@ -196,141 +325,133 @@ public class XPay
 
     
     
-    
-    /**
-     * TERMINAL_ID
-     * TRANSACTION_ID
-     * ACTION_CODE
-     * AMOUNT
-     * CURRENCY
-     * LANGUAGE
-     * NOTIFICATION_URL
-     * RESULT_URL
-     * ERROR_URL
-     * ANNULMENT_URL
-     * VERSION_CODE
-     * EMAIL
-     * DESC_ORDER
-     * CO_PLATFORM
-     * MAC
-     * MESSAGE_TYPE
-     * OPTION FIELDS
-     */
-    public static void setVPOSReqLightAttributes (HttpServletRequest request, String resId, BigInteger amount, String lang, String email)
+    public static void setPaymentAttributes (HttpServletRequest request, String resId, BigInteger amount, String lang, String email)
     throws Exception
     {
-        String transactionId = makeTransactionId (resId);
-        System.err.println("TransactionId = "+transactionId);
-        
-        request.setAttribute(__PAYMENT_URL_PROP, __PAYMENT_URL_VALUE);
-        request.setAttribute(__TERMINAL_ID_PROP, __TERMINAL_ID_VALUE);
-        request.setAttribute(__TRANSACTION_ID_PROP, transactionId);
-        request.setAttribute(__ACTION_CODE_PROP, __AUT_CONT);
-        String s = amount.toString();
-        if (s.length() < 9)
-        {
-            StringBuffer buff = new StringBuffer();
-            int i = 9 - s.length();
-            for (int j=i; j> 0; j--)
-                buff.append("0");
-            buff.append(s);
-            s = buff.toString();
-        }
-        request.setAttribute(__AMOUNT_PROP, s);
-        request.setAttribute(__CURRENCY_PROP, __CURR_978);
-        request.setAttribute(__LANGUAGE_PROP, convertLanguage(lang));
-        request.setAttribute(__NOTIFICATION_URL_PROP, __NOTIFICATION_URL_VALUE);
-        request.setAttribute(__RESULT_URL_PROP, __RESULT_URL_VALUE); 
-        request.setAttribute(__ERROR_URL_PROP, __ERROR_URL_VALUE);
-        request.setAttribute(__ANNULMENT_URL_PROP, __ANNULMENT_URL_VALUE);
-        request.setAttribute(__VERSION_CODE_PROP, __VERSION_VALUE);
-        request.setAttribute(__EMAIL_PROP, email);
-        request.setAttribute(__DESC_ORDER_PROP, "");
-        request.setAttribute(__CO_PLATFORM_PROP, __CO_PLATFORM_VALUE);
-        request.setAttribute(__MAC_PROP, calculateVPOSReqLightMAC(request));
-        //request.setAttribute(__MESSAGE_TYPE_PROP, );
-        
+        String transactionId = makeTransactionIdFromResId (resId);
+        request.setAttribute(URL, URL_VALUE);
+        request.setAttribute(URL_BACK, URL_BACK_VALUE);
+        request.setAttribute(PAYMENT_URL_PROP, PAYMENT_URL_VALUE);
+        request.setAttribute(URL_POST, NOTIFICATION_URL_VALUE);
+        request.setAttribute(ALIAS, ALIAS_VALUE);
+        request.setAttribute(IMPORTO, amount.toString());
+        request.setAttribute(COD_TRANS, transactionId);
+        request.setAttribute(MAIL, email);
+        request.setAttribute(LANGUAGE_ID, convertLanguage(lang));
+        request.setAttribute(MAC, getSendingMAC(request));    
     }
     
     
-    public static void dumpVPOSReqLight (HttpServletRequest request)
+    public static void dumpPaymentAttributes (HttpServletRequest request)
     {
-        System.err.println(request.getAttribute(__PAYMENT_URL_PROP));
-        System.err.println(request.getAttribute(__TERMINAL_ID_PROP));
-        System.err.println(request.getAttribute(__TRANSACTION_ID_PROP));
-        System.err.println(request.getAttribute(__ACTION_CODE_PROP));
-        System.err.println(request.getAttribute(__AMOUNT_PROP));
-        System.err.println(request.getAttribute(__CURRENCY_PROP));
-        System.err.println(request.getAttribute(__LANGUAGE_PROP));
-        System.err.println(request.getAttribute(__NOTIFICATION_URL_PROP));
-        System.err.println(request.getAttribute(__RESULT_URL_PROP)); 
-        System.err.println(request.getAttribute(__ERROR_URL_PROP));
-        System.err.println(request.getAttribute(__ANNULMENT_URL_PROP));
-        System.err.println(request.getAttribute(__VERSION_CODE_PROP));
-        System.err.println(request.getAttribute(__EMAIL_PROP));
-        System.err.println(request.getAttribute(__DESC_ORDER_PROP));
-        System.err.println(request.getAttribute(__CO_PLATFORM_PROP));
-        System.err.println(request.getAttribute(__MAC_PROP));
+        System.err.println("to:"+request.getAttribute(PAYMENT_URL_PROP));
+        System.err.println("return url:"+request.getAttribute(URL));
+        System.err.println("fail url:"+request.getAttribute(URL_BACK));
+        System.err.println("alias:"+request.getAttribute(ALIAS));
+        System.err.println("importo:"+request.getAttribute(IMPORTO));
+        System.err.println("codTrans:"+request.getAttribute(COD_TRANS));
+        System.err.println("email:"+request.getAttribute(MAIL));
+        System.err.println("lang:"+request.getAttribute(LANGUAGE_ID));
+        System.err.println("mac:"+request.getAttribute(MAC));
     }
     
-    public static String makeTransactionId (String resId)
+    public static String makeTransactionIdFromResId (String resId)
     throws Exception
     {
-        
-       
         ReservationData rd = ReservationManager.getInstance().findReservation(resId);
         if (rd == null)
             throw new IllegalStateException("Unknown reservation: "+resId);
       
         //Make a unique id by appending ms since epoch as alpha string
-        String str = (resId+"-"+Long.toString(System.currentTimeMillis(), 36));
-        
-        //pad to 20 char as per spec p.43
-        if (str.length() < 20)
-        {
-            StringBuffer buff = new StringBuffer(20);
-            int j = 20 - str.length();
-            for (int i=j; i>0; i--)
-                buff.append("0");
-            buff.append(str);
-            str = buff.toString();
-        }
-      
+        String str = (resId+"-"+Long.toString(System.currentTimeMillis(), 36));      
        
         return str;
     }
     
+    
+    public static String getResIdFromTransactionId (String transId)
+    {
+        if (transId == null)
+            throw new IllegalStateException ("No transaction id");
+        transId = transId.trim();
+        if ("".equals(transId))
+            throw new IllegalStateException ("No transaction id");
+        
+        String resId = transId;
+        int i = resId.indexOf("-");
+        
+        //Get rid of appended ms
+        if (i >= 0)
+            resId = resId.substring(0,i);
+        
+        //Get last 8 chars, which is the zero-padded reservation id
+        if (resId.length() > 8)
+            resId = resId.substring(resId.length()-8);
+        
+        return resId;
+    }
+    
     /**
-     * Generate a XPay MAC by using fields:
-     * TERMINAL_ID = ESE_WEB_00000001
-     * TRANSACTION_ID = 01234abcdefg01234567
-     * AMOUNT = 000000009
-     * CURRENCY = 978
-     * VERSION_CODE = 01.00
-     * CO_PLATFORM = L
-     * ACTION_CODE = AUT
-     * EMAIL = nome_cognome@tiscali.it
-     * Chiave per MAC
+     * Generate a MAC string.
      * 
+     * @param request
      * @return
+     * @throws Exception
      */
-    public static String calculateVPOSReqLightMAC (HttpServletRequest request)
+    public static String getSendingMAC (HttpServletRequest request)
     throws Exception
     {
-       
         StringBuffer buff = new StringBuffer();
-        append (buff, request.getAttribute(__TERMINAL_ID_PROP));
-        append(buff, request.getAttribute(__TRANSACTION_ID_PROP));
-        append(buff, request.getAttribute(__AMOUNT_PROP));
-        append(buff, request.getAttribute(__CURRENCY_PROP));
-        append(buff, request.getAttribute(__VERSION_CODE_PROP));
-        append(buff, request.getAttribute(__CO_PLATFORM_PROP));
-        append(buff, request.getAttribute(__ACTION_CODE_PROP));
-        append(buff, request.getAttribute(__EMAIL_PROP));
-        append(buff, __MAC_KEY_VALUE);
-       
+        String tmp = (String)request.getAttribute(COD_TRANS);
+        buff.append(COD_TRANS+"="+tmp);
+        buff.append(DIVISA+"=EUR"); //unchangeable
+        tmp = (String)request.getAttribute(IMPORTO);
+        buff.append(IMPORTO+"="+tmp);
+        buff.append(MAC_SECRET);
+
+        return calculateMAC (buff.toString());
+    }
+    
+    /**
+     * Generate a MAC string from a message received from Xpay.
+     * 
+     * Uses fields:
+     * <ol>
+     * <li>codTrans</li>
+     * <li>esito</li>
+     * <li>importo</li>
+     * <li>divisa</li>
+     * <li>data</li>
+     * <li>orario</li>
+     * <li>codAut</li>
+     * <li>mac key</li>
+     * </ol>
+     * @param request
+     * @return
+     * @throws Exception
+     */
+    public static String getReceivingMAC (HttpServletRequest request)
+    throws Exception
+    {
+        StringBuffer buff = new StringBuffer();
+        String tmp = (String)request.getParameter(COD_TRANS);
+        buff.append(COD_TRANS+"="+tmp);
+        tmp = (String)request.getParameter(ESITO);
+        buff.append(ESITO+"="+tmp);
+        tmp = (String)request.getParameter(IMPORTO);
+        buff.append(IMPORTO+"="+tmp);
+        tmp = (String)request.getParameter(DIVISA);
+        buff.append(DIVISA+"="+tmp);
+        tmp = (String)request.getParameter(DATA);
+        buff.append(DATA+"="+tmp);
+        tmp = (String)request.getParameter(ORARIO);
+        buff.append(ORARIO+"="+tmp);
+        //buff.append(ORARIO+tmp);
+        tmp = (String)request.getParameter(COD_AUT);
+        buff.append(COD_AUT+"="+tmp);
+        buff.append(MAC_SECRET);
+        
         return calculateMAC(buff.toString());
-          
     }
     
     public static String calculateMAC (String str) 
@@ -343,31 +464,6 @@ public class XPay
         return  toHexString(digest.digest());    
     }
     
-    /**
-     * Calculate a hash of text received from bank and compare it to
-     * the XPay field received:
-     * TERMINAL_ID
-     * TRANSACTION_ID
-     * RESPONSE
-     * AMOUNT
-     * CURRENCY
-     * Chiave per MAC
-
-     * @param request containing params
-     * @return hash
-     */
-    public static String calculateVPOSNotificationMAC (HttpServletRequest request)
-    throws Exception
-    {
-       StringBuffer buff = new StringBuffer();
-       append(buff, request.getParameter(__TERMINAL_ID_PROP));
-       append(buff, request.getParameter(__TRANSACTION_ID_PROP));
-       append(buff, request.getParameter(__RESPONSE_PROP));
-       append(buff, request.getParameter(__AMOUNT_PROP));
-       append(buff, request.getParameter(__CURRENCY_PROP));
-       append(buff, __MAC_KEY_VALUE);
-       return calculateMAC(buff.toString());
-    }
 
     
     /**
@@ -377,11 +473,11 @@ public class XPay
      * @param request
      * @return
      */
-    public static boolean verifyVPOSNotificationMAC (HttpServletRequest request)
+    public static boolean verifyReceivedMAC (HttpServletRequest request)
     throws Exception
     {
-        String mac = request.getParameter(__MAC_PROP);
-        String calculatedMac = calculateVPOSNotificationMAC(request);
+        String mac = request.getParameter(MAC);
+        String calculatedMac = getReceivingMAC(request);
         if (mac != null && mac.equals(calculatedMac))
             return true;
         
@@ -392,20 +488,16 @@ public class XPay
     public static String convertLanguage (String siteLang)
     {
         if (siteLang == null)
-            return __LANG_ENG;
-        String str = siteLang.trim();
-        if (str.equals(""))
-            return __LANG_ENG;
-        if (str.equalsIgnoreCase("IT"))
-            return __LANG_ITA;
-        if (str.equalsIgnoreCase("EN"))
-            return __LANG_ENG;
-        if (str.equalsIgnoreCase("FR"))
-            return __LANG_FRA;
-        if (str.equalsIgnoreCase("DE"))
-            return __LANG_DEU;
+            return Language.ENGLISH.theirs();
+        String s = siteLang.trim();
+        if ("".equals(s))
+            return Language.ENGLISH.theirs();
         
-        return __LANG_ENG;
+        String theirs = __ourLanguageToTheirs.get(s);
+        if (theirs == null)
+            return Language.ENGLISH.theirs();
+        
+        return theirs;
     }
 
     /**
@@ -416,22 +508,12 @@ public class XPay
     private static String toHexString (byte[] b)
     {
         char hexDigit[] = {'0', '1', '2', '3', '4', '5', '6', '7',
-                           '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+                           '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         StringBuffer buf = new StringBuffer();
         for (int j=0; j<b.length; j++) {
             buf.append(hexDigit[(b[j] >> 4) & 0x0f]);
             buf.append(hexDigit[b[j] & 0x0f]);
         }
         return buf.toString();
-    }
-    
-    
-    private static void append (StringBuffer buff, Object value)
-    {
-        if (buff == null)
-            return;
-        if (value == null)
-            return;
-        buff.append(value.toString().trim());
     }
 }

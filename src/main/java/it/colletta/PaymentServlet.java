@@ -32,11 +32,14 @@ public class PaymentServlet extends HttpServlet
         super.doPost(req,resp);
     }
 
-    /**Handle a payment notification message from the XPay payment system.
-     * The confirmation indicates that the payment was successful.
-     * Also, the confirmation might have already been processed, by the Colletta
-     * site when the user is returned to the Colletta site after the payment.
-     * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+    /**
+     * Handle a payment notification message from the XPay payment system
+     * as the URL_POST.
+     * 
+     * The confirmation can indicate success or failure.
+     * 
+     * Also, the confirmation might have already been processed by the booking filter
+     * when the user is returned to the Colletta site after the payment.
      */
     public void doPost (HttpServletRequest srequest, HttpServletResponse sresponse)
     throws IOException, ServletException
@@ -44,8 +47,6 @@ public class PaymentServlet extends HttpServlet
         PrintWriter out = sresponse.getWriter();
         sresponse.setContentType("text/html");
         
-        System.err.println("PaymentServlet: "+srequest.getQueryString()+" "+srequest.getParameterMap());
-        System.err.println(srequest);
         try
         {
             XPay.handlePayment(srequest, getServletContext());
