@@ -535,7 +535,6 @@ public class ReservationData implements Serializable, Cloneable
         if (result.compareTo(ZERO)<=0)
             return ZERO;
 
-System.err.println("SUBTRACTION="+result.setScale(currencyObj.getDefaultFractionDigits(), BigDecimal.ROUND_UP));
         return (result.setScale(currencyObj.getDefaultFractionDigits(), BigDecimal.ROUND_UP));
     }
 
