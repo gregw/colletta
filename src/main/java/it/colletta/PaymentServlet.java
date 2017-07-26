@@ -54,8 +54,6 @@ public class PaymentServlet extends HttpServlet
         }
         catch (Exception e)
         {
-            System.err.println("PaymentServlet: "+e);
-	    e.printStackTrace();
             getServletContext().log("Problem processing payment: ", e);
             out.print("400 - Problem with payment message:"+e);
             sresponse.setStatus(400);

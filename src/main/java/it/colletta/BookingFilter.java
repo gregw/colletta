@@ -157,9 +157,20 @@ public class BookingFilter extends FormFilter
     protected String handleReturnFromPayment(HttpServletRequest srequest) throws Exception
     {
         context.log("handling return from PAYMENT");
-        String resId = XPay.handlePayment(srequest, context);
+        try
+        {
+            String resId = XPay.getResIdFromPaymentMessage(srequest, context);
+            return srequest.getRequestURI() + "?ref=" + resId + "&booking=view";
+        }
+        catch (Exception e)
+        {
+            context.log("Error processing XPay redirect", e);
+            return srequest.getRequestURI();
+        }
 
-        return srequest.getRequestURI() + "?ref=" + resId + "&booking=view";
+        
+        
+        
     }
 
     /* ------------------------------------------------------------------------------- */

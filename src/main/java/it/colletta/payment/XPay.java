@@ -231,6 +231,23 @@ public class XPay
     }
 
 
+    /**
+     * Just get the reservation id from the payment message.
+     * 
+     * @param srequest
+     * @param context
+     * @return the reservation id
+     * @throws Exception
+     */
+    public static String getResIdFromPaymentMessage (HttpServletRequest srequest, ServletContext context)
+    throws Exception
+    {
+        User old=User.getCurrentUser();
+        User.setCurrentUser(User.XPAY);
+        
+        String transactionId = srequest.getParameter(COD_TRANS);                   
+        return getResIdFromTransactionId(transactionId);
+    }
 
     
     /**
@@ -266,7 +283,7 @@ public class XPay
                 {
                     //log duplicate message
                     context.log ("Ignoring duplicate payment confirmation message transactionId="+transactionId);
-                    return null;
+                    return getResIdFromTransactionId(transactionId);
                 }
                 else
                 {
