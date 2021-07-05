@@ -9,7 +9,7 @@
 <% if (enabled==null || enabled.booleanValue()){ %>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="get" id="paypal${name}" >
 <input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="borgotelematico@colletta-it.com">
+<input type="hidden" name="business" value="info@colletta.it">
 <input type="hidden" name="item_name" value="${name} for reservation ${resId}">
 <input type="hidden" name="item_number" value="${resId}">
 <input type="hidden" name="amount" value="${value}">

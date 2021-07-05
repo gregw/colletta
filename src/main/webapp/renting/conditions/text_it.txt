@@ -5,13 +5,16 @@
 
 
 !Deposito e Pagamento:
-Una volta effettuata la prenotazione, essa si considera valida (approvata) per 72 ore. In questo tempo deve essere versato un deposito pari al 20% del costo totale del soggiorno. In quel momento la prenotazione viene confermata. Il deposito versato si considererà comunque non rimborsabile. In caso di mancato pagamento del deposito, la prenotazione decade e l'appartamento si considera nuovamente disponibile. Se ancora interessato, l'ospite può chiedere che la prenotazione venga riapprovata e dunque sarà di nuovo valida per  24 ore, durante le quali dovrà essere versato il deposito del 20%.
-Il saldo deve essere versato entro 56 giorni prima dell'arrivo. In casi particolari o se l'arrivo è previsto entro 24-72 ore dalla prenotazione, sarà richiesto subito l'intero importo. Inoltre in questo caso il personale può decidere di confermare prenotazioni il cui saldo verrà effettuato al momento dell'arrivo nel borgo, previa richiesta specifica dell'ospite. Il sistema di pagamento online accetta carte di credito e bonifici bancari, i pagamenti in loco dovranno avvenire in contanti o carta di credito.
+Una volta effettuata la prenotazione, essa si considera valida (approvata) per 72 ore. Un deposito pari al 30% del costo totale del soggiorno confirma la prenotazione. Il saldo deve essere versato entro 30 giorni prima dell'arrivo. 
+In casi particolari o se l'arrivo è previsto entro 24-72 ore dalla prenotazione, sarà richiesto subito l'intero importo. Inoltre in questo caso il personale può decidere di confermare prenotazioni il cui saldo verrà effettuato al momento dell'arrivo nel borgo, previa richiesta specifica dell'ospite. 
+Il sistema di pagamento online accetta carte di credito e bonifici bancari, i pagamenti in loco dovranno avvenire in contanti o carta di credito.
 Per pagamenti tramite bonifico bancario:
-BORGO TELEMATICO SRL
-Cassa di Risparmio di Savona - Filiale di Cisano sul Neva
-IBAN: IT68L0631049390000004036580
-COD SWIFT: CRSVIT2S127
+TREEHOUSE ITALIA SRL   
+Banca di Desio e della Brianza SPA
+Codice Filiale: 396
+Piazza Mameli 28r, 17100 Savona
+IBAN: IT59 K034 4010 6000 0000 0198 300
+BIC: BDBDIT22
 
 !Stagioni e costi:
 I prezzi degli affitti a Colletta variano a seconda della stagione. Si considerano 2 stagionalità (alta e bassa) con 2 differenti fasce di prezzo. Le date di queste stagioni sono riportate sul [[seasons:Calendario Stagionale]].  Il personale non accetta richieste di modifica delle stagionalità da parte degli ospiti.
@@ -21,7 +24,11 @@ Gli arrivi e le partenze per la settimana avvengono di sabato. Le prenotazioni c
 I prezzi sono intesi per appartamento e includono: acqua, luce, internet, biancheria e asciugamani all'arrivo, riscaldamento (dalla seconda settimana di settembre fino alla fine di aprile) . Includono anche l'uso del computer nelle sale riunioni, prestito di libri e dvd dalla biblioteca, l'uso della piscina e assistenza del nostro manager residente. I prezzi non includono tutto ciò che non è specificato alla voce "i prezzi includono".
 
 !Cancellazione:
-Nel caso di cancellazione, sia che essa avvenga tramite specifica richiesta del cliente, sia che avvenga per mancato pagamento del totale, verrà trattenuto in ogni caso il deposito del 20% versato. E comunque, in ogni caso verrà trattenuta la quota di apertura pratica, pari a 50 euro.
+Nel caso di cancellazione, sia che essa avvenga tramite specifica richiesta del cliente, sia che avvenga per mancato pagamento del totale, il cliente potrà annullare una prenotazione fino a 30 giorni prima dell’arrivo con una penale del 30% sulla quota soggiorno, da 29 giorni a 14 giorni prima penale del 40% da 13 giorni fino al giorno dell’arrivo penale dell’80%.
+
+In circostanze straordinarie (ad esempio restrizioni COVID), la cancellazione senza penalità è consentita da entrambe le parti
+
+In ogni caso verrà trattenuta la quota per l’apertura della pratica €50,00. Nel caso di riconsegna delle chiavi anticipata rispetto al termine di scadenza della locazione il canone già versato non verrà restituito. 
 
 !Sostituzione:
 Se per cause indipendenti dalla nostra volontà fossimo obbligati a sostituire un appartamento con un altro avendo caratteristiche simili oppure superiori, e quindi più costoso, non vi sarà alcuna maggiorazione di prezzo. Se, previo consenso del cliente, dovessimo assegnare un appartamento di qualità inferiore, la differenza verrà rimborsata. Data la particolare struttura del borgo e la singolarità di ogni appartamento, non è sicuro che sia sempre disponibile un appartamento di evidente categoria superiore. 
@@ -31,13 +38,13 @@ $$
 $$
 [SubTitle: NEL BORGO]
 !Arrivo: 
-Check-in inizia alle 15 e termina alle 18.00. Un late check-in entro le ore 21.00 sarà possibile a condizione di avvisare il personale Affitti al  +39 338 7717909. In caso di arrivo dopo le ore 21.00, avvisare il personale al numero +39 338 7717909. Verrà richiesta una penale di euro 30,00. Il check in all'arrivo avverrà nel bar/osteria situato nella piazzetta centrale del borgo, dove verranno consegnate le chiavi, verrà mostrato l'appartamento e sarà richiesto il pagamento dell'eventuale saldo. Sarà necessario mostrare il vostro voucher (stampabile dalla pagine della prenotazione) per fare il check-in e un documento di identità. SARA' RICHIESTA UNA CAUZIONE DI 200 EURO IN CONTANTI ED IN EURO, che sarà restituita alla partenza degli ospiti se e solo se non verranno riscontrati danni causati dagli ospiti stessi.
+Check-in inizia alle 15 e termina alle 18.00. Un late check-in entro le ore 21.00 sarà possibile a condizione di avvisare il personale Affitti al  +39 340 340 3603 . In caso di arrivo dopo le ore 21.00, avvisare il personale al numero +39 340 340 3603 . Verrà richiesta una penale di euro 30,00. Il check in all'arrivo avverrà nel bar/osteria situato nella piazzetta centrale del borgo, dove verranno consegnate le chiavi, verrà mostrato l'appartamento e sarà richiesto il pagamento dell'eventuale saldo. Sarà necessario mostrare il vostro voucher (stampabile dalla pagine della prenotazione) per fare il check-in e un documento di identità. SARA' RICHIESTA UNA CAUZIONE DI 200 EURO IN CONTANTI ED IN EURO, che sarà restituita alla partenza degli ospiti se e solo se non verranno riscontrati danni causati dagli ospiti stessi.
 
 !Partenza:
 Il rilascio dell'appartamento dovrà avvenire tassativamente entro le ore 10.00 del giorno della partenza. Riportate le chiavi al personale Affitti. La cauzione verrà restituita al check-out una volta riscontrato che non sono stati causati danni.
 
 !Parcheggiare:
-Potete parcheggiare sull'ultimo livello del parccheggio pluripiano adiacente al borgo. La piazza all'ingresso del borgo è utilizzabile esclusivamente per caricare e scaricare i bagagli così come nel caso della strada di ghiaia situata nella parte inferiore del borgo.
+Potete parcheggiare sull'ultimo livello del parcheggio pluripiano adiacente al borgo. La piazza all'ingresso del borgo è utilizzabile esclusivamente per caricare e scaricare i bagagli così come nel caso della strada di ghiaia situata nella parte inferiore del borgo.
 
 !Numero di persone:
 [Bold:La proprietà affittata, l'immobile e il terreno ad esso attinente, non possono essere occupati da un numero di persone superiore a quello indicato nei dettagli della proprietà o nella conferma di prenotazione. Detto numero include i bambini, qualsiasi sia la loro età.]  Tuttavia, qualora le dimensioni dell'appartamento lo consentissero, è possibile richiedere l'aggiunta di un lettino per neonati (di proprietà o in affitto), previo accordo scritto con il personale. 

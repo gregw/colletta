@@ -76,7 +76,7 @@ if(res.equals("VERIFIED")) {
 	   sign=-1;
 
 	// check that receiverEmail is your Primary PayPal email
-	if (!receiverEmail.equals("borgotelematico@colletta-it.com"))
+	if (!receiverEmail.equals("info@colletta.it"))
 		sign=0;
 
 	// check that paymentAmount/paymentCurrency are correct

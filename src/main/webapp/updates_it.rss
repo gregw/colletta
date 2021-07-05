@@ -5,123 +5,124 @@
     <link>http://www.colletta.it/it</link>
     <description>Colletta di Castelbianco</description>
     <item>
-      <title>Notizie</title>
-      <link>http://www.colletta.it/it/news/</link>
-      <description />
-      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/news/</guid>
-      <dc:date>2015-11-23T00:23:00Z</dc:date>
-    </item>
-    <item>
-      <title>Festa dell'Olio 2004</title>
-      <link>http://www.colletta.it/it/news/olivefestival/</link>
-      <description>3 - 5 Dicembre 2004</description>
-      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/news/olivefestival/</guid>
-      <dc:date>2015-11-23T00:23:00Z</dc:date>
-    </item>
-    <item>
-      <title>Festa dell'Olio 2007</title>
-      <link>http://www.colletta.it/it/news/olivefestival2007/</link>
-      <description>Raccolta annuale</description>
-      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/news/olivefestival2007/</guid>
-      <dc:date>2015-11-23T00:23:00Z</dc:date>
-    </item>
-    <item>
-      <title>Festa dell'Olio 2008</title>
-      <link>http://www.colletta.it/it/news/olivefestival2008/</link>
-      <description>Raccolta annuale</description>
-      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/news/olivefestival2008/</guid>
-      <dc:date>2015-11-23T00:23:00Z</dc:date>
-    </item>
-    <item>
-      <title>Festa dell'Olio 2010</title>
-      <link>http://www.colletta.it/it/news/olivefestival2010/</link>
-      <description>Raccolta annuale di olive</description>
-      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/news/olivefestival2010/</guid>
-      <dc:date>2015-11-23T00:23:00Z</dc:date>
-    </item>
-    <item>
-      <title>Festa dell'Olio 2011</title>
-      <link>http://www.colletta.it/it/news/olivefestival2011/</link>
-      <description>Raccolta annuale di Olivi</description>
-      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/news/olivefestival2011/</guid>
-      <dc:date>2015-11-23T00:23:00Z</dc:date>
-    </item>
-    <item>
-      <title>Festa dell'Olio 2012</title>
-      <link>http://www.colletta.it/it/news/olivefestival2012/</link>
-      <description>Foto</description>
-      <pubDate>Mon, 23 Nov 2015 00:23:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/news/olivefestival2012/</guid>
-      <dc:date>2015-11-23T00:23:00Z</dc:date>
-    </item>
-    <item>
-      <title>Eventi</title>
-      <link>http://www.colletta.it/it/events/</link>
-      <description />
-      <pubDate>Mon, 23 Nov 2015 00:18:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/events/</guid>
-      <dc:date>2015-11-23T00:18:00Z</dc:date>
-    </item>
-    <item>
-      <title>Riserva</title>
-      <link>http://www.colletta.it/it/renting/book/</link>
-      <description>Faccia una prenotazione</description>
-      <pubDate>Sun, 22 Nov 2015 22:07:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/renting/book/</guid>
-      <dc:date>2015-11-22T22:07:00Z</dc:date>
-    </item>
-    <item>
-      <link>http://www.colletta.it/it/</link>
-      <description />
-      <pubDate>Sun, 22 Nov 2015 22:07:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/</guid>
-      <dc:date>2015-11-22T22:07:00Z</dc:date>
-    </item>
-    <item>
       <title>Posizione</title>
       <link>http://www.colletta.it/it/village/location/</link>
       <description>Dov'è il Borgo</description>
-      <pubDate>Sun, 22 Nov 2015 22:07:00 GMT</pubDate>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
       <guid>http://www.colletta.it/it/village/location/</guid>
-      <dc:date>2015-11-22T22:07:00Z</dc:date>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
     </item>
     <item>
       <title>Tooc's Driving Instructions</title>
       <link>http://www.colletta.it/it/village/location/driving/</link>
       <description />
-      <pubDate>Sun, 22 Nov 2015 22:07:00 GMT</pubDate>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
       <guid>http://www.colletta.it/it/village/location/driving/</guid>
-      <dc:date>2015-11-22T22:07:00Z</dc:date>
-    </item>
-    <item>
-      <title>Da Nizza</title>
-      <link>http://www.colletta.it/it/village/location/driving/fromnizza/</link>
-      <description>Da Nizza</description>
-      <pubDate>Sun, 22 Nov 2015 22:07:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/village/location/driving/fromnizza/</guid>
-      <dc:date>2015-11-22T22:07:00Z</dc:date>
-    </item>
-    <item>
-      <title>Da Genova</title>
-      <link>http://www.colletta.it/it/village/location/driving/fromgenova/</link>
-      <description>Da Genova</description>
-      <pubDate>Sun, 22 Nov 2015 22:07:00 GMT</pubDate>
-      <guid>http://www.colletta.it/it/village/location/driving/fromgenova/</guid>
-      <dc:date>2015-11-22T22:07:00Z</dc:date>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
     </item>
     <item>
       <title>Da Torino</title>
       <link>http://www.colletta.it/it/village/location/driving/fromtorino/</link>
       <description>Da Torino</description>
-      <pubDate>Sun, 22 Nov 2015 22:07:00 GMT</pubDate>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
       <guid>http://www.colletta.it/it/village/location/driving/fromtorino/</guid>
-      <dc:date>2015-11-22T22:07:00Z</dc:date>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>From Pisa</title>
+      <link>http://www.colletta.it/it/village/location/driving/frompisa/</link>
+      <description />
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/driving/frompisa/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>Da Nizza</title>
+      <link>http://www.colletta.it/it/village/location/driving/fromnizza/</link>
+      <description>Da Nizza</description>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/driving/fromnizza/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>Da Martinetto</title>
+      <link>http://www.colletta.it/it/village/location/driving/frommartinetto/</link>
+      <description>Da Martinetto</description>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/driving/frommartinetto/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>General tips</title>
+      <link>http://www.colletta.it/it/village/location/driving/generaltips/</link>
+      <description />
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/driving/generaltips/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>To Genoa Airport</title>
+      <link>http://www.colletta.it/it/village/location/driving/togenova/</link>
+      <description />
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/driving/togenova/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>Voli</title>
+      <link>http://www.colletta.it/it/village/location/flightsitalia/</link>
+      <description>Voli internazionali e nazionali</description>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/flightsitalia/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>Voli dai Regni Uniti</title>
+      <link>http://www.colletta.it/it/village/location/flightsitalia/flightsuk/</link>
+      <description>Voli dai Regni Uniti</description>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/flightsitalia/flightsuk/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>Traffic</title>
+      <link>http://www.colletta.it/it/village/location/traffic/</link>
+      <description />
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/location/traffic/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>Servizi</title>
+      <link>http://www.colletta.it/it/village/services/</link>
+      <description>Servizi in villagio</description>
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/services/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>eoffice</title>
+      <link>http://www.colletta.it/it/village/services/eoffice/</link>
+      <description />
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/services/eoffice/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>pool</title>
+      <link>http://www.colletta.it/it/village/services/pool/</link>
+      <description />
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/services/pool/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
+    </item>
+    <item>
+      <title>beach</title>
+      <link>http://www.colletta.it/it/village/services/beach/</link>
+      <description />
+      <pubDate>Thu, 17 Jun 2021 22:51:00 GMT</pubDate>
+      <guid>http://www.colletta.it/it/village/services/beach/</guid>
+      <dc:date>2021-06-17T22:51:00Z</dc:date>
     </item>
   </channel>
 </rss>
