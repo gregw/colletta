@@ -572,6 +572,45 @@ public class BookingFilter extends FormFilter
         }
         
         
+        //Handle the 3 board options: breakfast, half board, full board
+        //allowing the user to change between them
+        if ("offerNone".equals(request.getParameter("offerBoard")))
+        {
+            reservation.data.removeAdjustments("O_Colazione");
+            reservation.data.removeAdjustments("O_MezzaPensione");
+            reservation.data.removeAdjustments("O_Pensione");
+        }
+        
+        
+        if ("offerColazione".equals(request.getParameter("offerBoard")))
+        {
+            reservation.data.removeAdjustments("O_MezzaPensione");
+            reservation.data.removeAdjustments("O_Pensione");
+            BigDecimal price = new BigDecimal(page.getProperty("O_ColazionePrice")).multiply(new BigDecimal(reservation.getNights()));
+            adjustment=reservation.data.addAdjustment("O_Colazione", 
+                    price, 
+                    page.getProperty(lang,"O_ColazioneBlurb"));
+        }
+        
+        if ("offerMezzaPensione".equals(request.getParameter("offerBoard")))
+        {
+            reservation.data.removeAdjustments("O_Colazione");
+            reservation.data.removeAdjustments("O_Pensione");
+            BigDecimal price = new BigDecimal(page.getProperty("O_MezzaPensionePrice")).multiply(new BigDecimal(reservation.getNights()));
+            adjustment=reservation.data.addAdjustment("O_MezzaPensione", 
+                    price, 
+                    page.getProperty(lang,"O_MezzaPensioneBlurb"));
+        }        
+        
+        if ("offerPensione".equals(request.getParameter("offerBoard")))
+        {
+            reservation.data.removeAdjustments("O_Colazione");
+            reservation.data.removeAdjustments("O_MezzaPensione");
+            BigDecimal price = new BigDecimal(page.getProperty("O_PensionePrice")).multiply(new BigDecimal(reservation.getNights()));
+            adjustment=reservation.data.addAdjustment("O_Pensione", 
+                    price, 
+                    page.getProperty(lang,"O_PensioneBlurb"));
+        }
     }
 
     /* ------------------------------------------------------------------------------- */

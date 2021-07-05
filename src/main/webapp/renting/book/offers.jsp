@@ -9,7 +9,116 @@
     User user = (User)session.getAttribute("user");
 
     Map properties = (Map) request.getAttribute("properties");
+
+    boolean colazione = reservation.hasAdjustments("O_Colazione");
+    boolean mezzaPensione = reservation.hasAdjustments("O_MezzaPensione");
+    boolean pensione = reservation.hasAdjustments("O_Pensione");
+    boolean noBoard = (!colazione && !mezzaPensione && !pensione);
+
 %>
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_NoBoard}<span>${properties.I_O_NoBoard}</span>:</td>
+<td class="FormNum">&nbsp;</td>
+<td  colspan="2">
+<%
+    if (noBoard)
+    {
+%>
+<input type="radio" name="offerBoard" value="offerNone" checked/>${properties.O_NoBoardBlurb}</td>
+<%
+    }
+    else
+    {
+%>
+<input type="radio" name="offerBoard" value="offerNone"/>${properties.O_NoBoardBlurb}</td>
+<%
+    }
+%>
+</tr>
+
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_Colazione}<span>${properties.I_O_Colazione}</span>:</td>
+<td class="FormNum">${properties.O_ColazionePrice}&nbsp;${properties.O_perDay}</td>
+<%
+    if (colazione)
+    {
+%>
+<td  colspan="2"><input type="radio" name="offerBoard" value="offerColazione" checked/>${properties.O_ColazioneBlurb}</td>
+<%
+    }
+    else
+    {
+%>
+<td  colspan="2"><input type="radio" name="offerBoard" value="offerColazione"/>${properties.O_ColazioneBlurb}</td>
+<%
+    }
+%>
+</tr>
+
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_MezzaPensione}<span>${properties.I_O_MezzaPensione}</span>:</td>
+<td class="FormNum">${properties.O_MezzaPensionePrice}&nbsp;${properties.O_perDay}</td>
+
+<%
+    if (mezzaPensione)
+    {
+%>
+<td  colspan="2"><input type="radio" name="offerBoard" value="offerMezzaPensione" checked/>${properties.O_MezzaPensioneBlurb}</td>
+<%
+    }
+    else
+    {
+%>
+<td  colspan="2"><input type="radio" name="offerBoard" value="offerMezzaPensione"/>${properties.O_MezzaPensioneBlurb}</td>
+<%
+    }
+%>
+</tr>     
+      
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_Pensione}<span>${properties.I_O_Pensione}</span>:</td>
+<td class="FormNum">${properties.O_PensionePrice}&nbsp;${properties.O_perDay}</td>
+<%
+    if (pensione)
+    {
+%>
+<td colspan="2"><input type="radio" name="offerBoard" value="offerPensione" checked />${properties.O_PensioneBlurb}</td>
+<%
+	}
+	else
+	{
+%>
+	<td colspan="2"><input type="radio" name="offerBoard" value="offerPensione" />${properties.O_PensioneBlurb}</td>
+<%
+    }
+%>
+</tr> 
+
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_Yoga}<span>${properties.I_O_Yoga}</span>:</td>
+<td class="FormNum">${properties.O_enquireForPrice}</td>
+<td  colspan="2">${properties.O_YogaBlurb}</td>
+</tr>
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_Fitness}<span>${properties.I_O_Fitness}</span>:</td>
+<td class="FormNum">${properties.O_enquireForPrice}</td>
+<td  colspan="2">${properties.O_FitnessBlurb}</td>
+</tr>
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_EBike}<span>${properties.I_O_EBike}</span>:</td>
+<td class="FormNum">${properties.O_enquireForPrice}</td>
+<td  colspan="2">${properties.O_EBikeBlurb}</td>
+</tr>
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_Orienteering}<span>${properties.I_O_Orienteering}</span>:</td>
+<td class="FormNum">${properties.O_enquireForPrice}</td>
+<td  colspan="2">${properties.O_OrienteeringBlurb}</td>
+</tr>
+<tr>
+<td class="Label"><a class="info" href="#">${properties.O_Climbing}<span>${properties.I_O_Climbing}</span>:</td>
+<td class="FormNum">${properties.O_enquireForPrice}</td>
+<td  colspan="2">${properties.O_ClimbingBlurb}</td>
+</tr>
 
 <% 
 /*
