@@ -326,12 +326,10 @@ public class BookingFilter extends FormFilter
                 ArrayList adjustments = new ArrayList(reservation.getReservationData().getAdjustments());
                 for (int i = adjustments.size(); i-- > 0;)
                 {
-                    System.err.println("adjustment" + i + ": " + srequest.getParameter("adjustment" + i) + " Adjustment=" + adjustments.get(i));
                     Adjustment adj = (Adjustment) adjustments.get(i);
                     if (!"on".equals(srequest.getParameter("adjustment" + i)))
                     {
                         Object o = adjustments.remove(i);
-                        System.err.println("Removed adjustment " + o);
                     }
                 }
                 reservation.getReservationData().setAdjustments(adjustments);   
