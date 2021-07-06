@@ -38,7 +38,7 @@
 
 <tr>
 <td class="Label"><a class="info" href="#">${properties.O_Colazione}<span>${properties.I_O_Colazione}</span>:</td>
-<td class="FormNum">${properties.O_ColazionePrice}&nbsp;${properties.O_perDay}</td>
+<td class="FormNum">${properties.O_ColazionePrice}&nbsp;${properties.O_perPersonDay}</td>
 <%
     if (colazione)
     {
@@ -57,7 +57,7 @@
 
 <tr>
 <td class="Label"><a class="info" href="#">${properties.O_MezzaPensione}<span>${properties.I_O_MezzaPensione}</span>:</td>
-<td class="FormNum">${properties.O_MezzaPensionePrice}&nbsp;${properties.O_perDay}</td>
+<td class="FormNum">${properties.O_MezzaPensionePrice}&nbsp;${properties.O_perPersonDay}</td>
 
 <%
     if (mezzaPensione)
@@ -77,7 +77,7 @@
       
 <tr>
 <td class="Label"><a class="info" href="#">${properties.O_Pensione}<span>${properties.I_O_Pensione}</span>:</td>
-<td class="FormNum">${properties.O_PensionePrice}&nbsp;${properties.O_perDay}</td>
+<td class="FormNum">${properties.O_PensionePrice}&nbsp;${properties.O_perPersonDay}</td>
 <%
     if (pensione)
     {

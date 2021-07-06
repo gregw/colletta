@@ -62,12 +62,13 @@ if (managed.booleanValue() || owned.booleanValue() || user!=null && user.isViewA
   {
     Adjustment adjustment = (Adjustment)adjs.next();
     request.setAttribute("adjustment",adjustment);
+    boolean boardOption = ("O_Colazione".equals(adjustment.getType()) || "O_MezzaPensione".equals(adjustment.getType()) || "O_Pensione".equals(adjustment.getType()));
 %> 
     <tr>
     <td class="Label"><a class="info" href="#">${properties[adjustment.type]}<span>${properties[adjustment.typeInfo]}</span></a>:</td>
     <td class="FormNum">&euro;&nbsp;${adjustment.amount}</td>
     <td class="Form">
-      <% if (!rro.booleanValue() && managed.booleanValue()) 
+      <% if (!rro.booleanValue() && managed.booleanValue() &&  !boardOption) 
          { %><input type="checkbox" checked name="adjustment<%=i%>"/><%}%>&nbsp;&nbsp;&nbsp;
        
       <% if (adjustment.isTaxIncluded()) { %> (${adjustment.iva}${properties.M_ivato})<%}%>

@@ -326,8 +326,13 @@ public class BookingFilter extends FormFilter
                 ArrayList adjustments = new ArrayList(reservation.getReservationData().getAdjustments());
                 for (int i = adjustments.size(); i-- > 0;)
                 {
+                    System.err.println("adjustment" + i + ": " + srequest.getParameter("adjustment" + i) + " Adjustment=" + adjustments.get(i));
                     Adjustment adj = (Adjustment) adjustments.get(i);
-                    if (!"on".equals(srequest.getParameter("adjustment" + i))) adjustments.remove(i);
+                    if (!"on".equals(srequest.getParameter("adjustment" + i)))
+                    {
+                        Object o = adjustments.remove(i);
+                        System.err.println("Removed adjustment " + o);
+                    }
                 }
                 reservation.getReservationData().setAdjustments(adjustments);   
             }
@@ -574,39 +579,46 @@ public class BookingFilter extends FormFilter
         
         //Handle the 3 board options: breakfast, half board, full board
         //allowing the user to change between them
-        if ("offerNone".equals(request.getParameter("offerBoard")))
+        if ("offerNone".equals(request.getParameter("offerBoard")) || request.getParameter("offerBoard") == null)
         {
             reservation.data.removeAdjustments("O_Colazione");
             reservation.data.removeAdjustments("O_MezzaPensione");
             reservation.data.removeAdjustments("O_Pensione");
         }
         
+        BigDecimal personNights = new BigDecimal(reservation.getNights()).multiply(new BigDecimal(reservation.getChildren() + reservation.getAdults()));
         
+        //if breakfast selected, was not already selected, remove any other types of board
         if ("offerColazione".equals(request.getParameter("offerBoard")))
         {
+            reservation.data.removeAdjustments("O_Colazione");
             reservation.data.removeAdjustments("O_MezzaPensione");
             reservation.data.removeAdjustments("O_Pensione");
-            BigDecimal price = new BigDecimal(page.getProperty("O_ColazionePrice")).multiply(new BigDecimal(reservation.getNights()));
+            BigDecimal price = new BigDecimal(page.getProperty("O_ColazionePrice")).multiply(personNights);
             adjustment=reservation.data.addAdjustment("O_Colazione", 
                     price, 
                     page.getProperty(lang,"O_ColazioneBlurb"));
         }
         
+        //if half board selected, was not already selected, remove any other types of board
         if ("offerMezzaPensione".equals(request.getParameter("offerBoard")))
         {
             reservation.data.removeAdjustments("O_Colazione");
+            reservation.data.removeAdjustments("O_MezzaPensione");
             reservation.data.removeAdjustments("O_Pensione");
-            BigDecimal price = new BigDecimal(page.getProperty("O_MezzaPensionePrice")).multiply(new BigDecimal(reservation.getNights()));
+            BigDecimal price = new BigDecimal(page.getProperty("O_MezzaPensionePrice")).multiply(personNights);
             adjustment=reservation.data.addAdjustment("O_MezzaPensione", 
                     price, 
                     page.getProperty(lang,"O_MezzaPensioneBlurb"));
-        }        
-        
+        }      
+
+        //if full board selected, was not already selected, remove any other types of board
         if ("offerPensione".equals(request.getParameter("offerBoard")))
         {
             reservation.data.removeAdjustments("O_Colazione");
             reservation.data.removeAdjustments("O_MezzaPensione");
-            BigDecimal price = new BigDecimal(page.getProperty("O_PensionePrice")).multiply(new BigDecimal(reservation.getNights()));
+            reservation.data.removeAdjustments("O_Pensione");
+            BigDecimal price = new BigDecimal(page.getProperty("O_PensionePrice")).multiply(personNights);
             adjustment=reservation.data.addAdjustment("O_Pensione", 
                     price, 
                     page.getProperty(lang,"O_PensioneBlurb"));

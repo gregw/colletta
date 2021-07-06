@@ -17,6 +17,7 @@ package it.colletta.reservation;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.List;
 
 public class Adjustment
 {
@@ -28,9 +29,12 @@ public class Adjustment
         __OWNER="Owner";           // To Owner.  0% IVA
                                    // every thing else to Manager 20% IVA
     
+    List<String> __IVA10 = Arrays.asList(__DISCOUNT, __CODE, __EXTRA, "O_Colazione", "O_MezzaPensione", "O_Pensione");
+    
     private String type;        // eg. Extra, Discount, Service, Owner
     private BigDecimal amount;
     private String comment;
+
     
     public Adjustment()
     {}
@@ -196,11 +200,7 @@ public class Adjustment
     {
         if (__OWNER.equals(type))
             return 0;
-        if (__DISCOUNT.equals(type))
-            return 10;
-        if (__CODE.equals(type))
-            return 10;
-        if (__EXTRA.equals(type))
+        if (__IVA10.contains(type))
             return 10;
         return 20;
     }
