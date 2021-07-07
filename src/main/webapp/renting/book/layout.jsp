@@ -122,7 +122,7 @@ while(iter.hasNext())
 </tr>
 <%} %>
 
-<% if (!rro.booleanValue() && (managed.booleanValue() || new YyyyMmDd().daysTo(reservation.getStartDate())>7)) { %>
+<% if (!rro.booleanValue() && (managed.booleanValue() || new YyyyMmDd().daysTo(reservation.getStartDate())>1)) { %>
 <tr id="offers"><td class="FormSection" colspan="4"><div class="SubTitle">${properties.H_offers}:</div></td></tr>
 <jsp:include page="offers.jsp" flush="true"/>
 <% } %> 
