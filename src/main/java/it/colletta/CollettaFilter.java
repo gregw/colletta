@@ -31,7 +31,10 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
 {
     protected void render(Page page, String lang, HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException
     {
-    	String css = Configuration.getInstance().getProperty("css.url", "http://www.egomedia.it/colletta/colletta.css"); 
+    	String css = Configuration.getInstance().getProperty("css.url", "http://www.egomedia.it/colletta/colletta.css");
+    	if (request.isSecure())
+    	    css = css.replace("http:", "https:");
+    	
         if ("false".equals(page.getProperty("colletta")))
         {
             chain.doFilter(request,response);
@@ -88,7 +91,10 @@ public class CollettaFilter extends com.mortbay.iwiki.PageFilter
         out.print("<div id=\"header\" class=\"container-fluid\">");
         out.print("<div class=\"row\">");
         out.print("<div class=\"logo col-sm-6\">");
-        out.print("<h1><a href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
+        if (request.isSecure())
+            out.print("<h1><a href=\"https://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
+        else
+            out.print("<h1><a href=\"http://www.colletta.it/\" title=\"Colletta di Castelbianco, Italy\"><span>Colletta di Castelbianco</span></a></h1>");
         out.println("</div>");
 
         // Flags

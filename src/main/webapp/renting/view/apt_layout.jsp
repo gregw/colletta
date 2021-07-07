@@ -151,7 +151,7 @@ ${properties.H_plusFees}
 &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="mailto:${apt.managerUser.email}?Subject=Colletta%20${properties.inquiry}%20${apt.displayName}%3f">${properties.inquiry}?</a>
 &nbsp; &nbsp; &nbsp; &nbsp; 
-<a href="/renting/conditions/">${properties.conditions}</a>
+<a href="../../conditions/">${properties.conditions}</a>
 <br/>
 
 <p>

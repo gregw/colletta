@@ -139,7 +139,7 @@ while(iter.hasNext())
 <tr id="conditions"><td class="FormSection" colspan="4">&nbsp;<div class="SubTitle">${properties.H_conditions}:</div></td></tr>
 <tr> 
   <td class="Label">&nbsp;</td>
-  <td class="Form" colspan="2"><input type="checkbox" name="acceptedConditions"/>&nbsp;${properties.M_acceptConditions}<a href="/renting/conditions">${properties.M_conditions}</a></td>
+  <td class="Form" colspan="2"><input type="checkbox" name="acceptedConditions"/>&nbsp;${properties.M_acceptConditions}<a href="../conditions">${properties.M_conditions}</a></td>
   <td class="Form"></td>
 </tr>
 

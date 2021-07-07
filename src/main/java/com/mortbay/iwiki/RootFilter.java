@@ -61,7 +61,7 @@ public class RootFilter implements Filter
     public void init(FilterConfig config) throws ServletException
     {
         context = config.getServletContext();
-        updateRoot();
+        updateRoot(context.getContextPath());
     }
 
     
@@ -96,7 +96,7 @@ public class RootFilter implements Filter
         if (referer == null || referer.length() == 0) referer = srequest.getHeader("Referer");
         if (referer == null || referer.length() == 0) referer = srequest.getHeader("Referrer");
 
-        if (referer != null && referer.startsWith("http:"))
+        if (referer != null && (referer.startsWith("http:") || referer.startsWith("https:")))
         {
             URL ref = new URL(referer);
             referer = ref.getHost() + ref.getPath();
@@ -121,7 +121,7 @@ public class RootFilter implements Filter
             if ("on".equals(session.getAttribute("edit")))
             {
                 edit = true;
-                updateRoot();
+                updateRoot(request.getServletContext().getContextPath());
             }
         }
         if (!uri.endsWith("/") || request.getAttribute("page") != null)
@@ -318,7 +318,7 @@ public class RootFilter implements Filter
     /**
      * 
      */
-    protected synchronized void updateRoot() throws ServletException
+    protected synchronized void updateRoot(String contextPath) throws ServletException
     {
         try
         {
@@ -341,7 +341,7 @@ public class RootFilter implements Filter
                     Page page = modified[i];
                     SyndEntry entry = new SyndEntryImpl();
                     entry.setTitle(page.getTitle(lang[l]));
-                    entry.setLink("http://www.colletta.it/" + lang[l] + page.getPath());
+                    entry.setLink(contextPath + lang[l] + page.getPath());
                     entry.setPublishedDate(new Date(page.getLastModified().getTimeInMillis()));
                     SyndContent description = new SyndContentImpl();
                     description.setType("text/html");
@@ -353,7 +353,7 @@ public class RootFilter implements Filter
                 SyndFeed feed = new SyndFeedImpl();
                 feed.setFeedType("rss_2.0");
                 feed.setTitle("Colletta di Castelbianco " + lang[l]);
-                feed.setLink("http://www.colletta.it/" + lang[l]);
+                feed.setLink(contextPath + lang[l]);
                 feed.setDescription("Colletta di Castelbianco");
                 feed.setEntries(updates);
                 SyndFeedOutput output = new SyndFeedOutput();
@@ -386,7 +386,7 @@ public class RootFilter implements Filter
                     Page page = (Page) news_and_events.get(i);
                     SyndEntry entry = new SyndEntryImpl();
                     entry.setTitle(page.getTitle(lang[l]));
-                    entry.setLink("http://www.colletta.it/" + lang[l] + page.getPath());
+                    entry.setLink(contextPath + lang[l] + page.getPath());
                     entry.setPublishedDate(new Date(page.getLastModified().getTimeInMillis()));
                     SyndContent description = new SyndContentImpl();
                     description.setType("text/html");
@@ -398,7 +398,7 @@ public class RootFilter implements Filter
                 feed = new SyndFeedImpl();
                 feed.setFeedType("rss_2.0");
                 feed.setTitle("Colletta di Castelbianco " + news.getTitle(lang[l]));
-                feed.setLink("http://www.colletta.it/" + lang[l]);
+                feed.setLink(contextPath + lang[l]);
                 feed.setDescription("Colletta di Castelbianco " + news.getTitle(lang[l]));
                 feed.setEntries(news_and_events);
                 output = new SyndFeedOutput();
